@@ -1,0 +1,2360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =====================================================
+         NEXORA — META
+    ====================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#080b12"
+    >
+
+    <meta
+        name="description"
+        content="NEXORA — Your personal learning, productivity and focus workspace."
+    >
+
+    <meta
+        name="author"
+        content="NEXORA"
+    >
+
+    <title>NEXORA — Learning & Productivity Hub</title>
+
+
+    <!-- =====================================================
+         FONT
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         ICONS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         NEXORA CSS
+         IMPORTANT:
+         CSS is completely separated.
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     APP
+========================================================= -->
+
+<div class="app">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+
+        <!-- LOGO -->
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                N
+            </div>
+
+            <div class="logo-text">
+                NEX<span>ORA</span>
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION TITLE -->
+
+        <div class="nav-title">
+            Workspace
+        </div>
+
+
+        <!-- MAIN NAVIGATION -->
+
+        <nav class="nav" id="mainNav">
+
+
+            <button
+                class="active"
+                data-page="home"
+                type="button"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-house"></i>
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </button>
+
+
+            <button
+                data-page="tasks"
+                type="button"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-list-check"></i>
+                </span>
+
+                <span>
+                    Tasks
+                </span>
+
+            </button>
+
+
+            <button
+                data-page="study"
+                type="button"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-book-open"></i>
+                </span>
+
+                <span>
+                    Study
+                </span>
+
+            </button>
+
+
+            <button
+                data-page="timer"
+                type="button"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-clock"></i>
+                </span>
+
+                <span>
+                    Focus Timer
+                </span>
+
+            </button>
+
+
+            <button
+                data-page="notes"
+                type="button"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-note-sticky"></i>
+                </span>
+
+                <span>
+                    Notes
+                </span>
+
+            </button>
+
+
+            <button
+                data-page="quiz"
+                type="button"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-brain"></i>
+                </span>
+
+                <span>
+                    Quiz
+                </span>
+
+            </button>
+
+
+            <button
+                data-page="achievements"
+                type="button"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-trophy"></i>
+                </span>
+
+                <span>
+                    Achievements
+                </span>
+
+            </button>
+
+
+            <button
+                data-page="settings"
+                type="button"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-sliders"></i>
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </button>
+
+
+        </nav>
+
+
+        <!-- SIDEBAR USER -->
+
+        <div class="sidebar-bottom">
+
+            <div class="user-mini">
+
+                <div class="avatar">
+                    N
+                </div>
+
+                <div class="user-mini-info">
+
+                    <div class="user-mini-name">
+                        NEXORA User
+                    </div>
+
+                    <div class="user-mini-level">
+                        Level 1 • Beginner
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main">
+
+
+        <!-- =================================================
+             MOBILE HEADER
+        ================================================== -->
+
+        <header class="mobile-header">
+
+            <div class="mobile-logo">
+                NEX<span>ORA</span>
+            </div>
+
+
+            <button
+                class="icon-btn"
+                id="mobileMenuButton"
+                type="button"
+                aria-label="Open menu"
+            >
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </header>
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <div class="topbar">
+
+
+            <div>
+
+                <h1
+                    class="page-title"
+                    id="pageTitle"
+                >
+                    Dashboard
+                </h1>
+
+                <p
+                    class="page-subtitle"
+                    id="pageSubtitle"
+                >
+                    Learn smarter. Focus deeper. Grow faster.
+                </p>
+
+            </div>
+
+
+            <div class="top-actions">
+
+
+                <!-- SEARCH -->
+
+                <button
+                    class="icon-btn"
+                    id="globalSearchButton"
+                    type="button"
+                    aria-label="Search"
+                    title="Search"
+                >
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </button>
+
+
+                <!-- NOTIFICATIONS -->
+
+                <button
+                    class="icon-btn"
+                    id="notificationButton"
+                    type="button"
+                    aria-label="Notifications"
+                    title="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                </button>
+
+
+                <!-- THEME -->
+
+                <button
+                    class="icon-btn"
+                    id="themeButton"
+                    type="button"
+                    aria-label="Toggle theme"
+                    title="Toggle theme"
+                >
+
+                    <i
+                        class="fa-solid fa-moon"
+                        id="themeIcon"
+                    ></i>
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             PAGE: HOME
+        ================================================== -->
+
+        <section
+            class="page active"
+            id="page-home"
+            data-page-content="home"
+        >
+
+
+            <!-- HERO -->
+
+            <section class="hero">
+
+
+                <div class="hero-badge">
+
+                    <i class="fa-solid fa-sparkles"></i>
+
+                    NEXORA EXPERIENCE
+
+                </div>
+
+
+                <h2>
+
+                    Welcome back to
+                    <span>NEXORA.</span>
+
+                    <br>
+
+                    Build your future,
+                    one focused day at a time.
+
+                </h2>
+
+
+                <p>
+
+                    Your personal workspace for learning,
+                    productivity, focus, notes, tasks and growth.
+
+                </p>
+
+
+                <div class="hero-actions">
+
+                    <button
+                        class="btn btn-primary"
+                        data-page-target="timer"
+                        type="button"
+                    >
+
+                        <i class="fa-solid fa-play"></i>
+
+                        Start Focus
+
+                    </button>
+
+
+                    <button
+                        class="btn btn-secondary"
+                        data-page-target="tasks"
+                        type="button"
+                    >
+
+                        <i class="fa-solid fa-list-check"></i>
+
+                        View Tasks
+
+                    </button>
+
+                </div>
+
+
+                <div class="hero-orb"></div>
+
+
+            </section>
+
+
+            <!-- =================================================
+                 STATISTICS
+            ================================================== -->
+
+            <section class="stats-grid">
+
+
+                <article class="stat-card">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+
+                        <span class="stat-label">
+                            COMPLETED
+                        </span>
+
+                    </div>
+
+                    <div
+                        class="stat-number"
+                        id="completedTasksStat"
+                    >
+                        0
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-fire"></i>
+                        </div>
+
+                        <span class="stat-label">
+                            STREAK
+                        </span>
+
+                    </div>
+
+                    <div
+                        class="stat-number"
+                        id="streakStat"
+                    >
+                        0
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+
+                        <span class="stat-label">
+                            FOCUS MIN
+                        </span>
+
+                    </div>
+
+                    <div
+                        class="stat-number"
+                        id="focusMinutesStat"
+                    >
+                        0
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <span class="stat-label">
+                            XP
+                        </span>
+
+                    </div>
+
+                    <div
+                        class="stat-number"
+                        id="xpStat"
+                    >
+                        0
+                    </div>
+
+                </article>
+
+
+            </section>
+
+
+            <!-- =================================================
+                 CONTENT GRID
+            ================================================== -->
+
+            <section class="content-grid">
+
+
+                <!-- LEFT COLUMN -->
+
+                <div>
+
+
+                    <!-- TODAY'S PROGRESS -->
+
+                    <article class="card">
+
+                        <div class="card-header">
+
+                            <div class="card-title">
+                                Today's Progress
+                            </div>
+
+                            <button
+                                class="card-link"
+                                data-page-target="tasks"
+                                type="button"
+                            >
+                                View all
+                            </button>
+
+                        </div>
+
+
+                        <div class="progress-info">
+
+                            <span>
+                                Daily completion
+                            </span>
+
+                            <span id="dailyProgressText">
+                                0%
+                            </span>
+
+                        </div>
+
+
+                        <div class="progress">
+
+                            <div
+                                class="progress-bar"
+                                id="dailyProgressBar"
+                                style="width:0%"
+                            ></div>
+
+                        </div>
+
+
+                        <div
+                            class="task-list"
+                            id="dashboardTaskList"
+                        >
+
+                            <!-- JS inserts tasks -->
+
+                        </div>
+
+
+                    </article>
+
+
+                    <!-- QUICK ACTIONS -->
+
+                    <article
+                        class="card"
+                        style="margin-top:20px;"
+                    >
+
+                        <div class="card-header">
+
+                            <div class="card-title">
+                                Quick Actions
+                            </div>
+
+                        </div>
+
+
+                        <div class="quick-actions">
+
+
+                            <button
+                                class="quick"
+                                data-action="new-task"
+                                type="button"
+                            >
+
+                                <div class="quick-icon">
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
+
+                                <div class="quick-title">
+                                    New Task
+                                </div>
+
+                                <div class="quick-desc">
+                                    Add something to accomplish.
+                                </div>
+
+                            </button>
+
+
+                            <button
+                                class="quick"
+                                data-action="new-note"
+                                type="button"
+                            >
+
+                                <div class="quick-icon">
+                                    <i class="fa-solid fa-pen"></i>
+                                </div>
+
+                                <div class="quick-title">
+                                    New Note
+                                </div>
+
+                                <div class="quick-desc">
+                                    Capture an idea instantly.
+                                </div>
+
+                            </button>
+
+
+                            <button
+                                class="quick"
+                                data-action="start-timer"
+                                type="button"
+                            >
+
+                                <div class="quick-icon">
+                                    <i class="fa-solid fa-bolt"></i>
+                                </div>
+
+                                <div class="quick-title">
+                                    Focus Session
+                                </div>
+
+                                <div class="quick-desc">
+                                    Start a distraction-free session.
+                                </div>
+
+                            </button>
+
+
+                            <button
+                                class="quick"
+                                data-action="open-quiz"
+                                type="button"
+                            >
+
+                                <div class="quick-icon">
+                                    <i class="fa-solid fa-brain"></i>
+                                </div>
+
+                                <div class="quick-title">
+                                    Quick Quiz
+                                </div>
+
+                                <div class="quick-desc">
+                                    Test your knowledge.
+                                </div>
+
+                            </button>
+
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+
+                <!-- RIGHT COLUMN -->
+
+                <div>
+
+
+                    <!-- DAILY QUOTE -->
+
+                    <article class="card">
+
+                        <div class="card-header">
+
+                            <div class="card-title">
+                                Daily Motivation
+                            </div>
+
+                            <i
+                                class="fa-solid fa-quote-right"
+                                style="color:var(--primary2);"
+                            ></i>
+
+                        </div>
+
+
+                        <p
+                            id="dailyQuote"
+                            class="quote-text"
+                        >
+                            Discipline is choosing what you want most
+                            over what you want now.
+                        </p>
+
+
+                        <div
+                            id="quoteAuthor"
+                            class="quote-author"
+                        >
+                            — NEXORA
+                        </div>
+
+
+                    </article>
+
+
+                    <!-- UPCOMING -->
+
+                    <article
+                        class="card"
+                        style="margin-top:20px;"
+                    >
+
+                        <div class="card-header">
+
+                            <div class="card-title">
+                                Your Journey
+                            </div>
+
+                        </div>
+
+
+                        <div class="journey-list">
+
+
+                            <div class="journey-item">
+
+                                <div class="journey-icon">
+                                    <i class="fa-solid fa-seedling"></i>
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Start
+                                    </strong>
+
+                                    <p>
+                                        Build your first habit.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="journey-item">
+
+                                <div class="journey-icon">
+                                    <i class="fa-solid fa-fire"></i>
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Consistency
+                                    </strong>
+
+                                    <p>
+                                        Keep your streak alive.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="journey-item">
+
+                                <div class="journey-icon">
+                                    <i class="fa-solid fa-crown"></i>
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Mastery
+                                    </strong>
+
+                                    <p>
+                                        Become the best version of you.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </article>
+
+
+                </div>
+
+
+            </section>
+
+
+        </section>
+
+
+        <!-- =================================================
+             PAGE: TASKS
+        ================================================== -->
+
+        <section
+            class="page"
+            id="page-tasks"
+            data-page-content="tasks"
+        >
+
+
+            <div class="toolbar">
+
+
+                <div class="search">
+
+                    <input
+                        type="search"
+                        id="taskSearch"
+                        placeholder="Search your tasks..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <button
+                    class="btn btn-primary"
+                    id="newTaskButton"
+                    type="button"
+                >
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    New Task
+
+                </button>
+
+
+            </div>
+
+
+            <article class="card">
+
+                <div class="card-header">
+
+                    <div class="card-title">
+                        All Tasks
+                    </div>
+
+                    <span
+                        class="card-link"
+                        id="taskCount"
+                    >
+                        0 tasks
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="task-list"
+                    id="allTaskList"
+                >
+
+                    <!-- JS renders tasks -->
+
+                </div>
+
+
+                <div
+                    class="empty"
+                    id="taskEmpty"
+                    hidden
+                >
+
+                    <div class="empty-icon">
+                        <i class="fa-solid fa-clipboard-check"></i>
+                    </div>
+
+                    <div class="empty-title">
+                        No tasks found
+                    </div>
+
+                    <div class="empty-text">
+                        Create a task and start making progress.
+                    </div>
+
+                </div>
+
+
+            </article>
+
+
+        </section>
+
+
+        <!-- =================================================
+             PAGE: STUDY
+        ================================================== -->
+
+        <section
+            class="page"
+            id="page-study"
+            data-page-content="study"
+        >
+
+
+            <article class="hero study-hero">
+
+                <div class="hero-badge">
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                    LEARNING HUB
+
+                </div>
+
+
+                <h2>
+                    Learn something
+                    <span>worth knowing.</span>
+                </h2>
+
+
+                <p>
+                    Organize your learning and turn knowledge
+                    into real progress.
+                </p>
+
+            </article>
+
+
+            <section class="content-grid">
+
+
+                <article class="card">
+
+                    <div class="card-header">
+
+                        <div class="card-title">
+                            Study Progress
+                        </div>
+
+                        <span
+                            class="card-link"
+                            id="studyPercent"
+                        >
+                            0%
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-info">
+
+                        <span>
+                            Overall learning
+                        </span>
+
+                        <span>
+                            Keep going
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar"
+                            id="studyProgressBar"
+                            style="width:0%"
+                        ></div>
+
+                    </div>
+
+
+                    <div class="study-subjects">
+
+
+                        <button
+                            class="subject-card"
+                            data-subject="English"
+                            type="button"
+                        >
+
+                            <span class="subject-icon">
+                                <i class="fa-solid fa-language"></i>
+                            </span>
+
+                            <span>
+                                <strong>
+                                    English
+                                </strong>
+
+                                <small>
+                                    Language
+                                </small>
+                            </span>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+
+                        <button
+                            class="subject-card"
+                            data-subject="Programming"
+                            type="button"
+                        >
+
+                            <span class="subject-icon">
+                                <i class="fa-solid fa-code"></i>
+                            </span>
+
+                            <span>
+                                <strong>
+                                    Programming
+                                </strong>
+
+                                <small>
+                                    Technology
+                                </small>
+                            </span>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+
+                        <button
+                            class="subject-card"
+                            data-subject="General Knowledge"
+                            type="button"
+                        >
+
+                            <span class="subject-icon">
+                                <i class="fa-solid fa-globe"></i>
+                            </span>
+
+                            <span>
+                                <strong>
+                                    General Knowledge
+                                </strong>
+
+                                <small>
+                                    Explore
+                                </small>
+                            </span>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+
+                    </div>
+
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="card-header">
+
+                        <div class="card-title">
+                            Learning Strategy
+                        </div>
+
+                    </div>
+
+
+                    <div class="strategy-list">
+
+
+                        <div class="strategy-item">
+
+                            <span>
+                                <i class="fa-solid fa-1"></i>
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Learn
+                                </strong>
+
+                                <p>
+                                    Understand the concept.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="strategy-item">
+
+                            <span>
+                                <i class="fa-solid fa-2"></i>
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Practice
+                                </strong>
+
+                                <p>
+                                    Apply what you learned.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="strategy-item">
+
+                            <span>
+                                <i class="fa-solid fa-3"></i>
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Review
+                                </strong>
+
+                                <p>
+                                    Strengthen your memory.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+            </section>
+
+
+        </section>
+
+
+        <!-- =================================================
+             PAGE: TIMER
+        ================================================== -->
+
+        <section
+            class="page"
+            id="page-timer"
+            data-page-content="timer"
+        >
+
+
+            <article class="card timer-card">
+
+
+                <div class="timer-mode">
+
+
+                    <button
+                        class="active"
+                        data-timer-mode="focus"
+                        type="button"
+                    >
+                        Focus
+                    </button>
+
+
+                    <button
+                        data-timer-mode="short"
+                        type="button"
+                    >
+                        Short Break
+                    </button>
+
+
+                    <button
+                        data-timer-mode="long"
+                        type="button"
+                    >
+                        Long Break
+                    </button>
+
+
+                </div>
+
+
+                <div
+                    class="timer-display"
+                    id="timerDisplay"
+                >
+                    25:00
+                </div>
+
+
+                <div
+                    class="timer-status"
+                    id="timerStatus"
+                >
+                    Ready to focus.
+                </div>
+
+
+                <div class="timer-controls">
+
+
+                    <button
+                        class="btn btn-secondary"
+                        id="timerReset"
+                        type="button"
+                    >
+
+                        <i class="fa-solid fa-rotate-left"></i>
+
+                        Reset
+
+                    </button>
+
+
+                    <button
+                        class="btn btn-primary timer-main"
+                        id="timerStart"
+                        type="button"
+                    >
+
+                        <i class="fa-solid fa-play"></i>
+
+                        Start
+
+                    </button>
+
+
+                    <button
+                        class="btn btn-secondary"
+                        id="timerSkip"
+                        type="button"
+                    >
+
+                        <i class="fa-solid fa-forward"></i>
+
+                        Skip
+
+                    </button>
+
+
+                </div>
+
+
+                <div class="timer-stats">
+
+
+                    <div>
+
+                        <strong id="timerSessions">
+                            0
+                        </strong>
+
+                        <span>
+                            Sessions
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong id="timerTodayMinutes">
+                            0
+                        </strong>
+
+                        <span>
+                            Minutes today
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </article>
+
+
+        </section>
+
+
+        <!-- =================================================
+             PAGE: NOTES
+        ================================================== -->
+
+        <section
+            class="page"
+            id="page-notes"
+            data-page-content="notes"
+        >
+
+
+            <div class="toolbar">
+
+                <div class="search">
+
+                    <input
+                        type="search"
+                        id="noteSearch"
+                        placeholder="Search notes..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <button
+                    class="btn btn-primary"
+                    id="newNoteButton"
+                    type="button"
+                >
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    New Note
+
+                </button>
+
+            </div>
+
+
+            <div
+                class="notes-grid"
+                id="notesGrid"
+            >
+
+                <!-- JS renders notes -->
+
+            </div>
+
+
+            <div
+                class="empty"
+                id="notesEmpty"
+                hidden
+            >
+
+                <div class="empty-icon">
+                    <i class="fa-regular fa-note-sticky"></i>
+                </div>
+
+                <div class="empty-title">
+                    No notes yet
+                </div>
+
+                <div class="empty-text">
+                    Your ideas deserve a place here.
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =================================================
+             PAGE: QUIZ
+        ================================================== -->
+
+        <section
+            class="page"
+            id="page-quiz"
+            data-page-content="quiz"
+        >
+
+
+            <article class="card quiz-box">
+
+
+                <div class="quiz-meta">
+
+                    <span id="quizProgress">
+                        Question 1 of 10
+                    </span>
+
+                    <span id="quizScore">
+                        Score: 0
+                    </span>
+
+                </div>
+
+
+                <div class="progress">
+
+                    <div
+                        class="progress-bar"
+                        id="quizProgressBar"
+                        style="width:10%"
+                    ></div>
+
+                </div>
+
+
+                <div
+                    class="quiz-question"
+                    id="quizQuestion"
+                >
+                    Loading question...
+                </div>
+
+
+                <div
+                    class="answers"
+                    id="quizAnswers"
+                >
+
+                    <!-- JS renders answers -->
+
+                </div>
+
+
+                <div
+                    class="quiz-actions"
+                    id="quizActions"
+                >
+
+                    <button
+                        class="btn btn-primary"
+                        id="nextQuestionButton"
+                        type="button"
+                        hidden
+                    >
+
+                        Next Question
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+
+            </article>
+
+
+        </section>
+
+
+        <!-- =================================================
+             PAGE: ACHIEVEMENTS
+        ================================================== -->
+
+        <section
+            class="page"
+            id="page-achievements"
+            data-page-content="achievements"
+        >
+
+
+            <article class="hero">
+
+                <div class="hero-badge">
+
+                    <i class="fa-solid fa-trophy"></i>
+
+                    YOUR PROGRESS
+
+                </div>
+
+
+                <h2>
+                    Every small win
+                    <span>counts.</span>
+                </h2>
+
+
+                <p>
+                    Unlock achievements as you learn,
+                    focus and complete your goals.
+                </p>
+
+            </article>
+
+
+            <div
+                class="achievements"
+                id="achievementsGrid"
+            >
+
+                <!-- JS renders achievements -->
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =================================================
+             PAGE: SETTINGS
+        ================================================== -->
+
+        <section
+            class="page"
+            id="page-settings"
+            data-page-content="settings"
+        >
+
+
+            <article class="card settings">
+
+
+                <div class="card-header">
+
+                    <div class="card-title">
+                        NEXORA Settings
+                    </div>
+
+                </div>
+
+
+                <!-- THEME -->
+
+                <div class="setting">
+
+                    <div>
+
+                        <div class="setting-title">
+                            Dark Mode
+                        </div>
+
+                        <div class="setting-desc">
+                            Switch between dark and light appearance.
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="switch on"
+                        id="themeSwitch"
+                        type="button"
+                        aria-label="Toggle dark mode"
+                        aria-pressed="true"
+                    ></button>
+
+                </div>
+
+
+                <!-- NOTIFICATIONS -->
+
+                <div class="setting">
+
+                    <div>
+
+                        <div class="setting-title">
+                            Notifications
+                        </div>
+
+                        <div class="setting-desc">
+                            Receive useful reminders from NEXORA.
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="switch on"
+                        id="notificationSwitch"
+                        type="button"
+                        aria-label="Toggle notifications"
+                        aria-pressed="true"
+                    ></button>
+
+                </div>
+
+
+                <!-- SOUND -->
+
+                <div class="setting">
+
+                    <div>
+
+                        <div class="setting-title">
+                            Timer Sound
+                        </div>
+
+                        <div class="setting-desc">
+                            Play a sound when a focus session ends.
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="switch on"
+                        id="soundSwitch"
+                        type="button"
+                        aria-label="Toggle timer sound"
+                        aria-pressed="true"
+                    ></button>
+
+                </div>
+
+
+                <!-- RESET -->
+
+                <div class="setting">
+
+                    <div>
+
+                        <div class="setting-title">
+                            Reset Workspace
+                        </div>
+
+                        <div class="setting-desc">
+                            Delete locally stored NEXORA data.
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="btn btn-danger"
+                        id="resetDataButton"
+                        type="button"
+                    >
+
+                        <i class="fa-solid fa-trash"></i>
+
+                        Reset Data
+
+                    </button>
+
+                </div>
+
+
+            </article>
+
+
+            <article
+                class="card about-card"
+                style="margin-top:20px;"
+            >
+
+                <div class="card-header">
+
+                    <div class="card-title">
+                        About NEXORA
+                    </div>
+
+                </div>
+
+
+                <div class="about-content">
+
+                    <div class="about-logo">
+                        N
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            NEXORA
+                        </h3>
+
+                        <p>
+                            Learn. Focus. Grow.
+                        </p>
+
+                        <small>
+                            Your personal digital learning workspace.
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+            </article>
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+<!-- =========================================================
+     MOBILE BOTTOM NAVIGATION
+========================================================= -->
+
+<nav
+    class="bottom-nav"
+    id="bottomNav"
+    aria-label="Mobile navigation"
+>
+
+
+    <button
+        class="active"
+        data-page="home"
+        type="button"
+    >
+
+        <span class="bottom-icon">
+            <i class="fa-solid fa-house"></i>
+        </span>
+
+        <span>
+            Home
+        </span>
+
+    </button>
+
+
+    <button
+        data-page="tasks"
+        type="button"
+    >
+
+        <span class="bottom-icon">
+            <i class="fa-solid fa-list-check"></i>
+        </span>
+
+        <span>
+            Tasks
+        </span>
+
+    </button>
+
+
+    <button
+        data-page="timer"
+        type="button"
+    >
+
+        <span class="bottom-icon">
+            <i class="fa-solid fa-clock"></i>
+        </span>
+
+        <span>
+            Focus
+        </span>
+
+    </button>
+
+
+    <button
+        data-page="notes"
+        type="button"
+    >
+
+        <span class="bottom-icon">
+            <i class="fa-solid fa-note-sticky"></i>
+        </span>
+
+        <span>
+            Notes
+        </span>
+
+    </button>
+
+
+    <button
+        data-page="settings"
+        type="button"
+    >
+
+        <span class="bottom-icon">
+            <i class="fa-solid fa-gear"></i>
+        </span>
+
+        <span>
+            Settings
+        </span>
+
+    </button>
+
+
+</nav>
+
+
+<!-- =========================================================
+     MODAL — TASK
+========================================================= -->
+
+<div
+    class="modal"
+    id="taskModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="taskModalTitle"
+>
+
+
+    <div class="modal-box">
+
+
+        <div class="modal-header">
+
+            <div
+                class="modal-title"
+                id="taskModalTitle"
+            >
+                Create Task
+            </div>
+
+
+            <button
+                class="icon-btn modal-close"
+                data-close-modal="taskModal"
+                type="button"
+                aria-label="Close"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <form id="taskForm">
+
+
+            <div class="form-grid">
+
+
+                <div class="form-group full">
+
+                    <label for="taskTitle">
+                        Task name
+                    </label>
+
+                    <input
+                        id="taskTitle"
+                        name="title"
+                        type="text"
+                        placeholder="What do you need to accomplish?"
+                        maxlength="120"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="taskPriority">
+                        Priority
+                    </label>
+
+                    <select
+                        id="taskPriority"
+                        name="priority"
+                    >
+
+                        <option value="Low">
+                            Low
+                        </option>
+
+                        <option
+                            value="Medium"
+                            selected
+                        >
+                            Medium
+                        </option>
+
+                        <option value="High">
+                            High
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="taskCategory">
+                        Category
+                    </label>
+
+                    <select
+                        id="taskCategory"
+                        name="category"
+                    >
+
+                        <option value="Study">
+                            Study
+                        </option>
+
+                        <option value="Personal">
+                            Personal
+                        </option>
+
+                        <option value="Work">
+                            Work
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="modal-actions">
+
+
+                <button
+                    class="btn btn-secondary"
+                    data-close-modal="taskModal"
+                    type="button"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    class="btn btn-primary"
+                    type="submit"
+                >
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Create Task
+
+                </button>
+
+
+            </div>
+
+
+        </form>
+
+
+    </div>
+
+
+</div>
+
+
+<!-- =========================================================
+     MODAL — NOTE
+========================================================= -->
+
+<div
+    class="modal"
+    id="noteModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="noteModalTitle"
+>
+
+
+    <div class="modal-box">
+
+
+        <div class="modal-header">
+
+            <div
+                class="modal-title"
+                id="noteModalTitle"
+            >
+                Create Note
+            </div>
+
+
+            <button
+                class="icon-btn modal-close"
+                data-close-modal="noteModal"
+                type="button"
+                aria-label="Close"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <form id="noteForm">
+
+
+            <div class="form-grid">
+
+
+                <div class="form-group full">
+
+                    <label for="noteTitle">
+                        Title
+                    </label>
+
+                    <input
+                        id="noteTitle"
+                        name="title"
+                        type="text"
+                        placeholder="Give your note a title..."
+                        maxlength="100"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <label for="noteBody">
+                        Note
+                    </label>
+
+                    <textarea
+                        id="noteBody"
+                        name="body"
+                        placeholder="Write your thoughts..."
+                        maxlength="5000"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="modal-actions">
+
+
+                <button
+                    class="btn btn-secondary"
+                    data-close-modal="noteModal"
+                    type="button"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    class="btn btn-primary"
+                    type="submit"
+                >
+
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    Save Note
+
+                </button>
+
+
+            </div>
+
+
+        </form>
+
+
+    </div>
+
+
+</div>
+
+
+<!-- =========================================================
+     SEARCH MODAL
+========================================================= -->
+
+<div
+    class="modal"
+    id="searchModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="searchModalTitle"
+>
+
+
+    <div class="modal-box">
+
+
+        <div class="modal-header">
+
+            <div
+                class="modal-title"
+                id="searchModalTitle"
+            >
+                Search NEXORA
+            </div>
+
+
+            <button
+                class="icon-btn modal-close"
+                data-close-modal="searchModal"
+                type="button"
+                aria-label="Close"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <div class="global-search">
+
+            <div class="search">
+
+                <input
+                    type="search"
+                    id="globalSearchInput"
+                    placeholder="Search tasks, notes..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <div
+                class="global-search-results"
+                id="globalSearchResults"
+            >
+
+                <div class="empty">
+
+                    <div class="empty-icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+
+                    <div class="empty-title">
+                        Search your workspace
+                    </div>
+
+                    <div class="empty-text">
+                        Type something above to begin.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+<!-- =========================================================
+     NOTIFICATION PANEL
+========================================================= -->
+
+<div
+    class="notification-panel"
+    id="notificationPanel"
+    aria-hidden="true"
+>
+
+
+    <div class="notification-header">
+
+        <strong>
+            Notifications
+        </strong>
+
+        <button
+            id="closeNotificationPanel"
+            type="button"
+            aria-label="Close notifications"
+        >
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </div>
+
+
+    <div
+        class="notification-list"
+        id="notificationList"
+    >
+
+        <div class="notification-item">
+
+            <div class="notification-icon">
+                <i class="fa-solid fa-sparkles"></i>
+            </div>
+
+            <div>
+
+                <strong>
+                    Welcome to NEXORA
+                </strong>
+
+                <p>
+                    Your workspace is ready.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+<!-- =========================================================
+     TOAST CONTAINER
+========================================================= -->
+
+<div
+    class="toast-container"
+    id="toastContainer"
+    aria-live="polite"
+    aria-atomic="true"
+></div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+     IMPORTANT:
+     JavaScript is completely separated.
+========================================================= -->
+
+<script
+    src="script.js"
+    defer
+></script>
+
+
+</body>
+
+</html>
