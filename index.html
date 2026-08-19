@@ -1,0 +1,2311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b0d12">
+<meta name="description" content="NEXORA — Learn. Focus. Grow.">
+<title>NEXORA — Learning Hub</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================
+     SIDEBAR
+========================= -->
+
+<aside class="sidebar">
+
+    <div class="logo">
+        <div class="logo-icon">N</div>
+        <div class="logo-text">NEX<span>ORA</span></div>
+    </div>
+
+    <div class="nav-title">Workspace</div>
+
+    <nav class="nav">
+
+        <button class="active" data-page="home">
+            <span class="nav-icon">⌂</span>
+            Dashboard
+        </button>
+
+        <button data-page="tasks">
+            <span class="nav-icon">✓</span>
+            Tasks
+        </button>
+
+        <button data-page="focus">
+            <span class="nav-icon">◷</span>
+            Focus
+        </button>
+
+        <button data-page="notes">
+            <span class="nav-icon">▤</span>
+            Notes
+        </button>
+
+        <button data-page="quiz">
+            <span class="nav-icon">?</span>
+            Quiz
+        </button>
+
+        <button data-page="progress">
+            <span class="nav-icon">◈</span>
+            Progress
+        </button>
+
+        <button data-page="achievements">
+            <span class="nav-icon">♛</span>
+            Achievements
+        </button>
+
+    </nav>
+
+    <div class="nav-title" style="margin-top:25px;">System</div>
+
+    <nav class="nav">
+
+        <button data-page="settings">
+            <span class="nav-icon">⚙</span>
+            Settings
+        </button>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+
+        <div class="user-mini">
+
+            <div class="avatar" id="avatarLetter">N</div>
+
+            <div class="user-mini-info">
+
+                <div class="user-mini-name" id="sideUsername">
+                    Student
+                </div>
+
+                <div class="user-mini-level" id="sideLevel">
+                    Level 1 · 0 XP
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</aside>
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main class="main">
+
+    <div class="mobile-header">
+
+        <div class="mobile-logo">
+            NEX<span>ORA</span>
+        </div>
+
+        <button class="icon-btn" onclick="toggleTheme()">
+            ◐
+        </button>
+
+    </div>
+
+    <div class="topbar">
+
+        <div>
+
+            <div class="page-title" id="pageTitle">
+                Dashboard
+            </div>
+
+            <div class="page-subtitle" id="pageSubtitle">
+                Learn. Focus. Grow.
+            </div>
+
+        </div>
+
+        <div class="top-actions">
+
+            <button class="icon-btn" onclick="toggleTheme()" title="Theme">
+                ◐
+            </button>
+
+            <button class="icon-btn" onclick="showToast('NEXORA is running perfectly ⚡')" title="Notifications">
+                ♢
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         HOME
+    ========================= -->
+
+    <section class="page active" id="page-home">
+
+        <div class="hero">
+
+            <div class="hero-orb"></div>
+
+            <div class="hero-badge">
+                ⚡ PERSONAL LEARNING HUB
+            </div>
+
+            <h2>
+                Welcome back, <span id="welcomeName">Student</span>.
+            </h2>
+
+            <p>
+                Build your knowledge. Stay focused. Keep moving forward.
+            </p>
+
+            <div class="progress-wrap" style="max-width:500px;margin-top:25px;">
+
+                <div class="progress-info">
+                    <span>Daily progress</span>
+                    <span id="dailyPercent">0%</span>
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar" id="dailyBar"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+                    <div class="stat-label">COMPLETED</div>
+                    <div class="stat-icon">✓</div>
+                </div>
+
+                <div class="stat-number" id="completedStat">0</div>
+
+                <div class="stat-label">
+                    Tasks completed
+                </div>
+
+            </div>
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+                    <div class="stat-label">FOCUS</div>
+                    <div class="stat-icon">◷</div>
+                </div>
+
+                <div class="stat-number" id="focusStat">
+                    0m
+                </div>
+
+                <div class="stat-label">
+                    Total focus time
+                </div>
+
+            </div>
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+                    <div class="stat-label">STREAK</div>
+                    <div class="stat-icon">🔥</div>
+                </div>
+
+                <div class="stat-number" id="streakStat">
+                    0
+                </div>
+
+                <div class="stat-label">
+                    Days in a row
+                </div>
+
+            </div>
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+                    <div class="stat-label">XP</div>
+                    <div class="stat-icon">✦</div>
+                </div>
+
+                <div class="stat-number" id="xpStat">
+                    0
+                </div>
+
+                <div class="stat-label">
+                    Experience points
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="content-grid">
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div class="card-title">
+                        Today's Tasks
+                    </div>
+
+                    <button class="card-link" onclick="openPage('tasks')">
+                        View all
+                    </button>
+
+                </div>
+
+                <div class="task-list" id="homeTasks"></div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div class="card-title">
+                        Quick Actions
+                    </div>
+
+                </div>
+
+                <div class="quick-actions">
+
+                    <button class="quick" onclick="openTaskModal()">
+                        <div class="quick-icon">＋</div>
+                        <div class="quick-title">New Task</div>
+                        <div class="quick-desc">Add something to do</div>
+                    </button>
+
+                    <button class="quick" onclick="openPage('focus')">
+                        <div class="quick-icon">◷</div>
+                        <div class="quick-title">Start Focus</div>
+                        <div class="quick-desc">Deep work session</div>
+                    </button>
+
+                    <button class="quick" onclick="openNoteModal()">
+                        <div class="quick-icon">✎</div>
+                        <div class="quick-title">New Note</div>
+                        <div class="quick-desc">Capture an idea</div>
+                    </button>
+
+                    <button class="quick" onclick="openPage('quiz')">
+                        <div class="quick-icon">?</div>
+                        <div class="quick-title">Take Quiz</div>
+                        <div class="quick-desc">Test your knowledge</div>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         TASKS
+    ========================= -->
+
+    <section class="page" id="page-tasks">
+
+        <div class="toolbar">
+
+            <div class="search">
+                <input
+                    id="taskSearch"
+                    placeholder="Search tasks..."
+                    oninput="renderTasks()"
+                >
+            </div>
+
+            <button class="btn btn-primary" onclick="openTaskModal()">
+                + New Task
+            </button>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-header">
+
+                <div class="card-title">
+                    All Tasks
+                </div>
+
+                <div style="font-size:11px;color:var(--muted)" id="taskCount">
+                    0 tasks
+                </div>
+
+            </div>
+
+            <div class="task-list" id="allTasks"></div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         FOCUS
+    ========================= -->
+
+    <section class="page" id="page-focus">
+
+        <div class="card timer-card">
+
+            <div class="timer-mode">
+
+                <button class="active" id="mode25" onclick="setTimer(25)">
+                    25 MIN
+                </button>
+
+                <button id="mode50" onclick="setTimer(50)">
+                    50 MIN
+                </button>
+
+                <button id="modeCustom" onclick="customTimer()">
+                    CUSTOM
+                </button>
+
+            </div>
+
+            <div class="timer-display" id="timerDisplay">
+                25:00
+            </div>
+
+            <div class="timer-status" id="timerStatus">
+                Ready to focus.
+            </div>
+
+            <div class="timer-controls">
+
+                <button class="btn btn-secondary" onclick="resetTimer()">
+                    Reset
+                </button>
+
+                <button
+                    class="btn btn-primary timer-main"
+                    id="timerButton"
+                    onclick="toggleTimer()"
+                >
+                    Start Focus
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         NOTES
+    ========================= -->
+
+    <section class="page" id="page-notes">
+
+        <div class="toolbar">
+
+            <div class="search">
+                <input
+                    id="noteSearch"
+                    placeholder="Search notes..."
+                    oninput="renderNotes()"
+                >
+            </div>
+
+            <button class="btn btn-primary" onclick="openNoteModal()">
+                + New Note
+            </button>
+
+        </div>
+
+        <div class="notes-grid" id="notesGrid"></div>
+
+    </section>
+
+    <!-- =========================
+         QUIZ
+    ========================= -->
+
+    <section class="page" id="page-quiz">
+
+        <div class="card quiz-box">
+
+            <div class="quiz-meta">
+
+                <span id="quizNumber">
+                    Question 1 / 5
+                </span>
+
+                <span id="quizScore">
+                    Score: 0
+                </span>
+
+            </div>
+
+            <div class="progress" style="margin-bottom:25px;">
+                <div class="progress-bar" id="quizProgress"></div>
+            </div>
+
+            <div class="quiz-question" id="quizQuestion">
+                Loading question...
+            </div>
+
+            <div class="answers" id="quizAnswers"></div>
+
+            <div
+                id="quizNextArea"
+                style="margin-top:20px;text-align:right;display:none;"
+            >
+
+                <button class="btn btn-primary" onclick="nextQuestion()">
+                    Next Question →
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         PROGRESS
+    ========================= -->
+
+    <section class="page" id="page-progress">
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-label">TOTAL TASKS</div>
+                <div class="stat-number" id="progressTasks">0</div>
+                <div class="stat-label">Created</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-label">COMPLETION</div>
+                <div class="stat-number" id="progressCompletion">0%</div>
+                <div class="stat-label">Task completion rate</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-label">FOCUS TIME</div>
+                <div class="stat-number" id="progressFocus">0m</div>
+                <div class="stat-label">Total minutes</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-label">QUIZ SCORE</div>
+                <div class="stat-number" id="progressQuiz">0%</div>
+                <div class="stat-label">Average score</div>
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-header">
+
+                <div class="card-title">
+                    Overall Progress
+                </div>
+
+            </div>
+
+            <div class="progress-wrap">
+
+                <div class="progress-info">
+                    <span>Level progress</span>
+                    <span id="levelProgressText">0 / 100 XP</span>
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar" id="levelBar"></div>
+                </div>
+
+            </div>
+
+            <div style="margin-top:30px;display:grid;grid-template-columns:repeat(2,1fr);gap:15px;">
+
+                <div class="stat-card">
+                    <div class="stat-label">CURRENT LEVEL</div>
+                    <div class="stat-number" id="levelNumber">1</div>
+                    <div class="stat-label">Keep learning</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-label">TOTAL XP</div>
+                    <div class="stat-number" id="totalXP">0</div>
+                    <div class="stat-label">Experience earned</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         ACHIEVEMENTS
+    ========================= -->
+
+    <section class="page" id="page-achievements">
+
+        <div class="achievements" id="achievementGrid"></div>
+
+    </section>
+
+    <!-- =========================
+         SETTINGS
+    ========================= -->
+
+    <section class="page" id="page-settings">
+
+        <div class="card settings">
+
+            <div class="card-header">
+
+                <div class="card-title">
+                    Settings
+                </div>
+
+            </div>
+
+            <div class="setting">
+
+                <div>
+                    <div class="setting-title">
+                        Dark Mode
+                    </div>
+
+                    <div class="setting-desc">
+                        Change the appearance of NEXORA.
+                    </div>
+                </div>
+
+                <div
+                    class="switch on"
+                    id="themeSwitch"
+                    onclick="toggleTheme()"
+                ></div>
+
+            </div>
+
+            <div class="setting">
+
+                <div>
+                    <div class="setting-title">
+                        Username
+                    </div>
+
+                    <div class="setting-desc">
+                        Change the name shown around the app.
+                    </div>
+                </div>
+
+                <button class="btn btn-secondary" onclick="changeUsername()">
+                    Change
+                </button>
+
+            </div>
+
+            <div class="setting">
+
+                <div>
+                    <div class="setting-title">
+                        Export Data
+                    </div>
+
+                    <div class="setting-desc">
+                        Download your NEXORA data.
+                    </div>
+                </div>
+
+                <button class="btn btn-secondary" onclick="exportData()">
+                    Export
+                </button>
+
+            </div>
+
+            <div class="setting">
+
+                <div>
+                    <div class="setting-title">
+                        Reset Everything
+                    </div>
+
+                    <div class="setting-desc">
+                        Delete all local NEXORA data.
+                    </div>
+                </div>
+
+                <button class="btn btn-danger" onclick="resetEverything()">
+                    Reset
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<!-- =========================
+     MOBILE NAV
+========================= -->
+
+<nav class="bottom-nav">
+
+    <button class="active" data-page="home">
+        <span class="bottom-icon">⌂</span>
+        Home
+    </button>
+
+    <button data-page="tasks">
+        <span class="bottom-icon">✓</span>
+        Tasks
+    </button>
+
+    <button data-page="focus">
+        <span class="bottom-icon">◷</span>
+        Focus
+    </button>
+
+    <button data-page="notes">
+        <span class="bottom-icon">▤</span>
+        Notes
+    </button>
+
+    <button data-page="settings">
+        <span class="bottom-icon">⚙</span>
+        Settings
+    </button>
+
+</nav>
+
+<!-- =========================
+     TASK MODAL
+========================= -->
+
+<div class="modal" id="taskModal">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <div class="modal-title">
+                Create Task
+            </div>
+
+            <button class="icon-btn" onclick="closeModal('taskModal')">
+                ×
+            </button>
+
+        </div>
+
+        <div class="form-grid">
+
+            <div class="form-group full">
+
+                <label>Task name</label>
+
+                <input
+                    id="taskName"
+                    placeholder="e.g. Study English"
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Priority</label>
+
+                <select id="taskPriority">
+                    <option value="Normal">Normal</option>
+                    <option value="High">High</option>
+                    <option value="Low">Low</option>
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Category</label>
+
+                <select id="taskCategory">
+                    <option>Study</option>
+                    <option>Programming</option>
+                    <option>Personal</option>
+                    <option>Work</option>
+                    <option>Other</option>
+                </select>
+
+            </div>
+
+        </div>
+
+        <div class="modal-actions">
+
+            <button class="btn btn-secondary" onclick="closeModal('taskModal')">
+                Cancel
+            </button>
+
+            <button class="btn btn-primary" onclick="createTask()">
+                Create Task
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================
+     NOTE MODAL
+========================= -->
+
+<div class="modal" id="noteModal">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <div class="modal-title">
+                New Note
+            </div>
+
+            <button class="icon-btn" onclick="closeModal('noteModal')">
+                ×
+            </button>
+
+        </div>
+
+        <div class="form-grid">
+
+            <div class="form-group full">
+
+                <label>Title</label>
+
+                <input
+                    id="noteTitle"
+                    placeholder="Note title..."
+                >
+
+            </div>
+
+            <div class="form-group full">
+
+                <label>Content</label>
+
+                <textarea
+                    id="noteBody"
+                    rows="7"
+                    placeholder="Write your note..."
+                ></textarea>
+
+            </div>
+
+        </div>
+
+        <div class="modal-actions">
+
+            <button class="btn btn-secondary" onclick="closeModal('noteModal')">
+                Cancel
+            </button>
+
+            <button class="btn btn-primary" onclick="createNote()">
+                Save Note
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================
+     TOAST
+========================= -->
+
+<div class="toast-container" id="toastContainer"></div>
+
+<script>
+
+/* =========================================================
+   NEXORA CORE
+========================================================= */
+
+const STORAGE_KEY = "nexora_data_v1";
+
+let data = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {
+
+    username: "Student",
+
+    theme: "dark",
+
+    tasks: [],
+
+    notes: [],
+
+    focusMinutes: 0,
+
+    xp: 0,
+
+    streak: 0,
+
+    lastActive: null,
+
+    quiz: {
+        total: 0,
+        correct: 0
+    }
+
+};
+
+function saveData(){
+
+    localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(data)
+    );
+
+}
+
+function showToast(message){
+
+    const container =
+        document.getElementById("toastContainer");
+
+    const toast =
+        document.createElement("div");
+
+    toast.className = "toast";
+
+    toast.textContent = message;
+
+    container.appendChild(toast);
+
+    setTimeout(() => {
+        toast.remove();
+    }, 3000);
+
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+const pageNames = {
+
+    home: [
+        "Dashboard",
+        "Learn. Focus. Grow."
+    ],
+
+    tasks: [
+        "Tasks",
+        "Organize your work."
+    ],
+
+    focus: [
+        "Focus",
+        "Deep work starts here."
+    ],
+
+    notes: [
+        "Notes",
+        "Capture what matters."
+    ],
+
+    quiz: [
+        "Quiz",
+        "Test your knowledge."
+    ],
+
+    progress: [
+        "Progress",
+        "See how far you've come."
+    ],
+
+    achievements: [
+        "Achievements",
+        "Every step counts."
+    ],
+
+    settings: [
+        "Settings",
+        "Customize your NEXORA experience."
+    ]
+
+};
+
+function openPage(page){
+
+    document
+        .querySelectorAll(".page")
+        .forEach(p => p.classList.remove("active"));
+
+    document
+        .querySelectorAll("[data-page]")
+        .forEach(b => b.classList.remove("active"));
+
+    const target =
+        document.getElementById("page-" + page);
+
+    if(target){
+        target.classList.add("active");
+    }
+
+    document
+        .querySelectorAll(`[data-page="${page}"]`)
+        .forEach(b => b.classList.add("active"));
+
+    document.getElementById("pageTitle").textContent =
+        pageNames[page][0];
+
+    document.getElementById("pageSubtitle").textContent =
+        pageNames[page][1];
+
+    if(page === "home") updateDashboard();
+    if(page === "tasks") renderTasks();
+    if(page === "notes") renderNotes();
+    if(page === "progress") updateProgress();
+    if(page === "achievements") renderAchievements();
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+document
+    .querySelectorAll("[data-page]")
+    .forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            openPage(
+                button.dataset.page
+            );
+
+        });
+
+    });
+
+/* =========================================================
+   USER
+========================================================= */
+
+function updateUser(){
+
+    document.getElementById("welcomeName")
+        .textContent = data.username;
+
+    document.getElementById("sideUsername")
+        .textContent = data.username;
+
+    document.getElementById("avatarLetter")
+        .textContent =
+        data.username.charAt(0).toUpperCase();
+
+    const level =
+        Math.floor(data.xp / 100) + 1;
+
+    document.getElementById("sideLevel")
+        .textContent =
+        `Level ${level} · ${data.xp} XP`;
+
+}
+
+function changeUsername(){
+
+    const name =
+        prompt(
+            "Enter your username:",
+            data.username
+        );
+
+    if(name && name.trim()){
+
+        data.username =
+            name.trim().slice(0,30);
+
+        saveData();
+
+        updateUser();
+
+        showToast("Username updated ✓");
+
+    }
+
+}
+
+/* =========================================================
+   THEME
+========================================================= */
+
+function applyTheme(){
+
+    if(data.theme === "light"){
+
+        document.body.classList.add("light");
+
+        const sw =
+            document.getElementById("themeSwitch");
+
+        if(sw) sw.classList.remove("on");
+
+    }else{
+
+        document.body.classList.remove("light");
+
+        const sw =
+            document.getElementById("themeSwitch");
+
+        if(sw) sw.classList.add("on");
+
+    }
+
+}
+
+function toggleTheme(){
+
+    data.theme =
+        data.theme === "dark"
+        ? "light"
+        : "dark";
+
+    saveData();
+
+    applyTheme();
+
+}
+
+/* =========================================================
+   TASKS
+========================================================= */
+
+function openTaskModal(){
+
+    document
+        .getElementById("taskModal")
+        .classList.add("open");
+
+    setTimeout(() => {
+
+        document
+            .getElementById("taskName")
+            .focus();
+
+    },100);
+
+}
+
+function createTask(){
+
+    const name =
+        document
+            .getElementById("taskName")
+            .value
+            .trim();
+
+    if(!name){
+
+        showToast("Enter a task name first.");
+
+        return;
+
+    }
+
+    const priority =
+        document
+            .getElementById("taskPriority")
+            .value;
+
+    const category =
+        document
+            .getElementById("taskCategory")
+            .value;
+
+    data.tasks.unshift({
+
+        id:Date.now(),
+
+        name,
+
+        priority,
+
+        category,
+
+        done:false,
+
+        created:new Date().toISOString()
+
+    });
+
+    data.xp += 5;
+
+    saveData();
+
+    closeModal("taskModal");
+
+    document.getElementById("taskName").value = "";
+
+    renderTasks();
+
+    updateDashboard();
+
+    showToast("Task created! +5 XP ⚡");
+
+}
+
+function toggleTask(id){
+
+    const task =
+        data.tasks.find(t => t.id === id);
+
+    if(!task) return;
+
+    task.done = !task.done;
+
+    if(task.done){
+
+        data.xp += 15;
+
+        updateStreak();
+
+        showToast("Task completed! +15 XP 🎉");
+
+    }else{
+
+        data.xp =
+            Math.max(0,data.xp - 15);
+
+    }
+
+    saveData();
+
+    renderTasks();
+
+    updateDashboard();
+
+}
+
+function deleteTask(id){
+
+    data.tasks =
+        data.tasks.filter(t => t.id !== id);
+
+    saveData();
+
+    renderTasks();
+
+    updateDashboard();
+
+    showToast("Task deleted.");
+
+}
+
+function taskHTML(task){
+
+    return `
+
+        <div class="task ${task.done ? "done" : ""}">
+
+            <button
+                class="task-check"
+                onclick="toggleTask(${task.id})"
+            >
+                ${task.done ? "✓" : ""}
+            </button>
+
+            <div class="task-name">
+                ${escapeHTML(task.name)}
+            </div>
+
+            <div class="task-priority">
+                ${escapeHTML(task.priority)}
+            </div>
+
+            <button
+                class="task-delete"
+                onclick="deleteTask(${task.id})"
+            >
+                ×
+            </button>
+
+        </div>
+
+    `;
+
+}
+
+function renderTasks(){
+
+    const container =
+        document.getElementById("allTasks");
+
+    const query =
+        (
+            document.getElementById("taskSearch")?.value
+            || ""
+        ).toLowerCase();
+
+    const tasks =
+        data.tasks.filter(task =>
+            task.name.toLowerCase().includes(query)
+        );
+
+    document.getElementById("taskCount")
+        .textContent =
+        `${data.tasks.length} tasks`;
+
+    if(!tasks.length){
+
+        container.innerHTML = `
+
+            <div class="empty">
+
+                <div class="empty-icon">✓</div>
+
+                <div class="empty-title">
+                    No tasks found
+                </div>
+
+                <div class="empty-text">
+                    Create your first task to get started.
+                </div>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+    container.innerHTML =
+        tasks.map(taskHTML).join("");
+
+}
+
+function updateDashboard(){
+
+    const completed =
+        data.tasks.filter(t => t.done).length;
+
+    const total =
+        data.tasks.length;
+
+    const percent =
+        total
+        ? Math.round((completed / total) * 100)
+        : 0;
+
+    document.getElementById("completedStat")
+        .textContent = completed;
+
+    document.getElementById("focusStat")
+        .textContent =
+        formatMinutes(data.focusMinutes);
+
+    document.getElementById("streakStat")
+        .textContent = data.streak;
+
+    document.getElementById("xpStat")
+        .textContent = data.xp;
+
+    document.getElementById("dailyPercent")
+        .textContent = percent + "%";
+
+    document.getElementById("dailyBar")
+        .style.width = percent + "%";
+
+    const homeTasks =
+        document.getElementById("homeTasks");
+
+    const recent =
+        data.tasks.slice(0,5);
+
+    if(!recent.length){
+
+        homeTasks.innerHTML = `
+
+            <div class="empty">
+
+                <div class="empty-icon">✨</div>
+
+                <div class="empty-title">
+                    Your workspace is empty
+                </div>
+
+                <div class="empty-text">
+                    Create a task and start building momentum.
+                </div>
+
+            </div>
+
+        `;
+
+    }else{
+
+        homeTasks.innerHTML =
+            recent.map(taskHTML).join("");
+
+    }
+
+    updateUser();
+
+}
+
+/* =========================================================
+   NOTES
+========================================================= */
+
+function openNoteModal(){
+
+    document
+        .getElementById("noteModal")
+        .classList.add("open");
+
+}
+
+function createNote(){
+
+    const title =
+        document
+            .getElementById("noteTitle")
+            .value
+            .trim();
+
+    const body =
+        document
+            .getElementById("noteBody")
+            .value
+            .trim();
+
+    if(!title || !body){
+
+        showToast("Add a title and some content.");
+
+        return;
+
+    }
+
+    data.notes.unshift({
+
+        id:Date.now(),
+
+        title,
+
+        body,
+
+        date:new Date().toISOString()
+
+    });
+
+    data.xp += 10;
+
+    saveData();
+
+    document.getElementById("noteTitle").value = "";
+
+    document.getElementById("noteBody").value = "";
+
+    closeModal("noteModal");
+
+    renderNotes();
+
+    showToast("Note saved! +10 XP 📝");
+
+}
+
+function deleteNote(id){
+
+    data.notes =
+        data.notes.filter(n => n.id !== id);
+
+    saveData();
+
+    renderNotes();
+
+    showToast("Note deleted.");
+
+}
+
+function renderNotes(){
+
+    const container =
+        document.getElementById("notesGrid");
+
+    const query =
+        (
+            document.getElementById("noteSearch")?.value
+            || ""
+        ).toLowerCase();
+
+    const notes =
+        data.notes.filter(note =>
+            note.title.toLowerCase().includes(query) ||
+            note.body.toLowerCase().includes(query)
+        );
+
+    if(!notes.length){
+
+        container.innerHTML = `
+
+            <div class="card empty" style="grid-column:1/-1">
+
+                <div class="empty-icon">📝</div>
+
+                <div class="empty-title">
+                    No notes yet
+                </div>
+
+                <div class="empty-text">
+                    Save your first idea, lesson or reminder.
+                </div>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+    container.innerHTML =
+        notes.map(note => `
+
+            <div class="note">
+
+                <div class="note-title">
+                    ${escapeHTML(note.title)}
+                </div>
+
+                <div class="note-body">
+                    ${escapeHTML(note.body)}
+                </div>
+
+                <div class="note-footer">
+
+                    <div class="note-date">
+                        ${formatDate(note.date)}
+                    </div>
+
+                    <button
+                        class="btn btn-danger"
+                        onclick="deleteNote(${note.id})"
+                    >
+                        Delete
+                    </button>
+
+                </div>
+
+            </div>
+
+        `).join("");
+
+}
+
+/* =========================================================
+   TIMER
+========================================================= */
+
+let timerSeconds = 25 * 60;
+
+let timerRunning = false;
+
+let timerInterval = null;
+
+let timerInitial = 25 * 60;
+
+function setTimer(minutes){
+
+    stopTimer();
+
+    timerInitial =
+        minutes * 60;
+
+    timerSeconds =
+        timerInitial;
+
+    document
+        .querySelectorAll(".timer-mode button")
+        .forEach(b =>
+            b.classList.remove("active")
+        );
+
+    if(minutes === 25)
+        document.getElementById("mode25")
+            .classList.add("active");
+
+    if(minutes === 50)
+        document.getElementById("mode50")
+            .classList.add("active");
+
+    updateTimerDisplay();
+
+}
+
+function customTimer(){
+
+    const minutes =
+        parseInt(
+            prompt("How many minutes?", "30")
+        );
+
+    if(!minutes || minutes < 1)
+        return;
+
+    stopTimer();
+
+    timerInitial =
+        minutes * 60;
+
+    timerSeconds =
+        timerInitial;
+
+    document
+        .querySelectorAll(".timer-mode button")
+        .forEach(b =>
+            b.classList.remove("active")
+        );
+
+    document
+        .getElementById("modeCustom")
+        .classList.add("active");
+
+    updateTimerDisplay();
+
+}
+
+function toggleTimer(){
+
+    if(timerRunning){
+
+        stopTimer();
+
+    }else{
+
+        startTimer();
+
+    }
+
+}
+
+function startTimer(){
+
+    if(timerSeconds <= 0)
+        resetTimer();
+
+    timerRunning = true;
+
+    document.getElementById("timerButton")
+        .textContent = "Pause";
+
+    document.getElementById("timerStatus")
+        .textContent = "Focus mode is active. Stay locked in.";
+
+    timerInterval =
+        setInterval(() => {
+
+            timerSeconds--;
+
+            updateTimerDisplay();
+
+            if(timerSeconds <= 0){
+
+                finishTimer();
+
+            }
+
+        },1000);
+
+}
+
+function stopTimer(){
+
+    timerRunning = false;
+
+    clearInterval(timerInterval);
+
+    timerInterval = null;
+
+    document.getElementById("timerButton")
+        .textContent = "Start Focus";
+
+    document.getElementById("timerStatus")
+        .textContent = "Paused. Ready when you are.";
+
+}
+
+function resetTimer(){
+
+    stopTimer();
+
+    timerSeconds =
+        timerInitial;
+
+    document.getElementById("timerStatus")
+        .textContent = "Ready to focus.";
+
+    updateTimerDisplay();
+
+}
+
+function finishTimer(){
+
+    stopTimer();
+
+    const minutes =
+        Math.round(timerInitial / 60);
+
+    data.focusMinutes += minutes;
+
+    data.xp += minutes;
+
+    saveData();
+
+    updateDashboard();
+
+    showToast(
+        `Focus session complete! +${minutes} XP 🎉`
+    );
+
+    document.getElementById("timerStatus")
+        .textContent =
+        "Session complete. Great work.";
+
+}
+
+function updateTimerDisplay(){
+
+    const minutes =
+        Math.floor(timerSeconds / 60)
+            .toString()
+            .padStart(2,"0");
+
+    const seconds =
+        (timerSeconds % 60)
+            .toString()
+            .padStart(2,"0");
+
+    document.getElementById("timerDisplay")
+        .textContent =
+        `${minutes}:${seconds}`;
+
+}
+
+function formatMinutes(minutes){
+
+    if(minutes < 60)
+        return `${minutes}m`;
+
+    const h =
+        Math.floor(minutes / 60);
+
+    const m =
+        minutes % 60;
+
+    return `${h}h ${m}m`;
+
+}
+
+/* =========================================================
+   QUIZ
+========================================================= */
+
+const questions = [
+
+    {
+        q:"Which language is primarily used to structure a web page?",
+        answers:["HTML","Python","SQL","C++"],
+        correct:0
+    },
+
+    {
+        q:"What does CSS control?",
+        answers:["Database","Web page styling","Server hardware","Passwords"],
+        correct:1
+    },
+
+    {
+        q:"Which language adds interactivity to websites?",
+        answers:["HTML","CSS","JavaScript","Markdown"],
+        correct:2
+    },
+
+    {
+        q:"What does GitHub primarily provide?",
+        answers:[
+            "A video editor",
+            "A code hosting and collaboration platform",
+            "A web browser",
+            "An operating system"
+        ],
+        correct:1
+    },
+
+    {
+        q:"Which storage method can save simple data inside a browser?",
+        answers:[
+            "LocalStorage",
+            "RAM only",
+            "CPU cache",
+            "GPU memory"
+        ],
+        correct:0
+    }
+
+];
+
+let quizIndex = 0;
+
+let quizScore = 0;
+
+let quizAnswered = false;
+
+function renderQuiz(){
+
+    const question =
+        questions[quizIndex];
+
+    document.getElementById("quizNumber")
+        .textContent =
+        `Question ${quizIndex + 1} / ${questions.length}`;
+
+    document.getElementById("quizScore")
+        .textContent =
+        `Score: ${quizScore}`;
+
+    document.getElementById("quizProgress")
+        .style.width =
+        ((quizIndex + 1) / questions.length * 100) + "%";
+
+    document.getElementById("quizQuestion")
+        .textContent =
+        question.q;
+
+    const answers =
+        document.getElementById("quizAnswers");
+
+    answers.innerHTML =
+        question.answers.map((answer,index) => `
+
+            <button
+                class="answer"
+                onclick="answerQuiz(${index})"
+            >
+                ${String.fromCharCode(65 + index)}.
+                ${escapeHTML(answer)}
+            </button>
+
+        `).join("");
+
+    document
+        .getElementById("quizNextArea")
+        .style.display = "none";
+
+    quizAnswered = false;
+
+}
+
+function answerQuiz(index){
+
+    if(quizAnswered)
+        return;
+
+    quizAnswered = true;
+
+    const question =
+        questions[quizIndex];
+
+    const buttons =
+        document.querySelectorAll(".answer");
+
+    buttons.forEach((button,i) => {
+
+        if(i === question.correct)
+            button.classList.add("correct");
+
+        if(i === index && i !== question.correct)
+            button.classList.add("wrong");
+
+    });
+
+    data.quiz.total++;
+
+    if(index === question.correct){
+
+        quizScore++;
+
+        data.quiz.correct++;
+
+        data.xp += 20;
+
+        showToast("Correct! +20 XP 🧠");
+
+    }else{
+
+        showToast("Not quite. Keep learning!");
+
+    }
+
+    saveData();
+
+    document
+        .getElementById("quizScore")
+        .textContent =
+        `Score: ${quizScore}`;
+
+    document
+        .getElementById("quizNextArea")
+        .style.display = "block";
+
+}
+
+function nextQuestion(){
+
+    quizIndex++;
+
+    if(quizIndex >= questions.length){
+
+        finishQuiz();
+
+        return;
+
+    }
+
+    renderQuiz();
+
+}
+
+function finishQuiz(){
+
+    const percentage =
+        Math.round(
+            quizScore / questions.length * 100
+        );
+
+    document.getElementById("quizQuestion")
+        .textContent =
+        `Quiz complete! You scored ${percentage}%.`;
+
+    document.getElementById("quizAnswers")
+        .innerHTML = `
+
+            <div class="card" style="text-align:center;">
+
+                <div style="font-size:45px;margin-bottom:10px;">
+                    ${percentage >= 80 ? "🏆" : "📚"}
+                </div>
+
+                <div style="font-size:18px;font-weight:800;">
+                    ${quizScore} / ${questions.length}
+                </div>
+
+                <div style="color:var(--muted);font-size:12px;margin-top:5px;">
+                    ${percentage >= 80
+                        ? "Excellent work!"
+                        : "Keep practicing and try again!"
+                    }
+                </div>
+
+                <button
+                    class="btn btn-primary"
+                    style="margin-top:18px;"
+                    onclick="restartQuiz()"
+                >
+                    Try Again
+                </button>
+
+            </div>
+
+        `;
+
+    document
+        .getElementById("quizNextArea")
+        .style.display = "none";
+
+    updateProgress();
+
+}
+
+function restartQuiz(){
+
+    quizIndex = 0;
+
+    quizScore = 0;
+
+    renderQuiz();
+
+}
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+function updateProgress(){
+
+    const total =
+        data.tasks.length;
+
+    const completed =
+        data.tasks.filter(t => t.done).length;
+
+    const completion =
+        total
+        ? Math.round(completed / total * 100)
+        : 0;
+
+    const averageQuiz =
+        data.quiz.total
+        ? Math.round(
+            data.quiz.correct /
+            data.quiz.total * 100
+        )
+        : 0;
+
+    document.getElementById("progressTasks")
+        .textContent = total;
+
+    document.getElementById("progressCompletion")
+        .textContent = completion + "%";
+
+    document.getElementById("progressFocus")
+        .textContent =
+        formatMinutes(data.focusMinutes);
+
+    document.getElementById("progressQuiz")
+        .textContent =
+        averageQuiz + "%";
+
+    const level =
+        Math.floor(data.xp / 100) + 1;
+
+    const currentXP =
+        data.xp % 100;
+
+    document.getElementById("levelNumber")
+        .textContent = level;
+
+    document.getElementById("totalXP")
+        .textContent = data.xp;
+
+    document.getElementById("levelProgressText")
+        .textContent =
+        `${currentXP} / 100 XP`;
+
+    document.getElementById("levelBar")
+        .style.width =
+        currentXP + "%";
+
+}
+
+/* =========================================================
+   ACHIEVEMENTS
+========================================================= */
+
+const achievementList = [
+
+    {
+        icon:"🌱",
+        name:"First Step",
+        desc:"Create your first task.",
+        condition:() => data.tasks.length >= 1
+    },
+
+    {
+        icon:"✓",
+        name:"Task Master",
+        desc:"Complete 10 tasks.",
+        condition:() =>
+            data.tasks.filter(t => t.done).length >= 10
+    },
+
+    {
+        icon:"🔥",
+        name:"On Fire",
+        desc:"Reach a 7 day streak.",
+        condition:() => data.streak >= 7
+    },
+
+    {
+        icon:"⏱️",
+        name:"Deep Worker",
+        desc:"Complete 60 minutes of focus.",
+        condition:() => data.focusMinutes >= 60
+    },
+
+    {
+        icon:"📝",
+        name:"Note Taker",
+        desc:"Create 5 notes.",
+        condition:() => data.notes.length >= 5
+    },
+
+    {
+        icon:"🧠",
+        name:"Quiz Master",
+        desc:"Answer 20 quiz questions.",
+        condition:() => data.quiz.total >= 20
+    },
+
+    {
+        icon:"⚡",
+        name:"100 XP",
+        desc:"Earn 100 XP.",
+        condition:() => data.xp >= 100
+    },
+
+    {
+        icon:"🚀",
+        name:"Level 5",
+        desc:"Reach level 5.",
+        condition:() =>
+            Math.floor(data.xp / 100) + 1 >= 5
+    },
+
+    {
+        icon:"👑",
+        name:"NEXORA Elite",
+        desc:"Earn 1000 XP.",
+        condition:() => data.xp >= 1000
+    }
+
+];
+
+function renderAchievements(){
+
+    const grid =
+        document.getElementById("achievementGrid");
+
+    grid.innerHTML =
+        achievementList.map(a => {
+
+            const unlocked =
+                a.condition();
+
+            return `
+
+                <div class="achievement ${unlocked ? "" : "locked"}">
+
+                    <div class="achievement-icon">
+                        ${a.icon}
+                    </div>
+
+                    <div class="achievement-name">
+                        ${a.name}
+                    </div>
+
+                    <div class="achievement-desc">
+                        ${a.desc}
+                    </div>
+
+                    <div style="
+                        margin-top:13px;
+                        font-size:9px;
+                        color:${unlocked
+                            ? "var(--success)"
+                            : "var(--muted)"
+                        };
+                        font-weight:700;
+                    ">
+                        ${unlocked ? "UNLOCKED ✓" : "LOCKED"}
+                    </div>
+
+                </div>
+
+            `;
+
+        }).join("");
+
+}
+
+/* =========================================================
+   STREAK
+========================================================= */
+
+function updateStreak(){
+
+    const today =
+        new Date().toDateString();
+
+    if(data.lastActive === today)
+        return;
+
+    const yesterday =
+        new Date(
+            Date.now() - 86400000
+        ).toDateString();
+
+    if(data.lastActive === yesterday){
+
+        data.streak++;
+
+    }else{
+
+        data.streak = 1;
+
+    }
+
+    data.lastActive = today;
+
+}
+
+/* =========================================================
+   MODALS
+========================================================= */
+
+function closeModal(id){
+
+    document
+        .getElementById(id)
+        .classList.remove("open");
+
+}
+
+document
+    .querySelectorAll(".modal")
+    .forEach(modal => {
+
+        modal.addEventListener("click", e => {
+
+            if(e.target === modal)
+                modal.classList.remove("open");
+
+        });
+
+    });
+
+/* =========================================================
+   EXPORT
+========================================================= */
+
+function exportData(){
+
+    const blob =
+        new Blob(
+            [JSON.stringify(data,null,2)],
+            {type:"application/json"}
+        );
+
+    const url =
+        URL.createObjectURL(blob);
+
+    const a =
+        document.createElement("a");
+
+    a.href = url;
+
+    a.download = "nexora-data.json";
+
+    a.click();
+
+    URL.revokeObjectURL(url);
+
+    showToast("Your data has been exported.");
+
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+function resetEverything(){
+
+    const confirmed =
+        confirm(
+            "Are you sure you want to delete all NEXORA data?"
+        );
+
+    if(!confirmed)
+        return;
+
+    localStorage.removeItem(STORAGE_KEY);
+
+    location.reload();
+
+}
+
+/* =========================================================
+   SECURITY / HTML ESCAPE
+========================================================= */
+
+function escapeHTML(value){
+
+    return String(value)
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
+
+}
+
+/* =========================================================
+   DATE
+========================================================= */
+
+function formatDate(date){
+
+    return new Date(date)
+        .toLocaleDateString(
+            undefined,
+            {
+                day:"numeric",
+                month:"short",
+                year:"numeric"
+            }
+        );
+
+}
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+function initialize(){
+
+    applyTheme();
+
+    updateUser();
+
+    updateDashboard();
+
+    renderTasks();
+
+    renderNotes();
+
+    renderQuiz();
+
+    updateProgress();
+
+    renderAchievements();
+
+    updateTimerDisplay();
+
+}
+
+initialize();
+
+</script>
+
+</body>
+</html>
