@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <!-- =====================================================
-         NEXORA — HEAD
+         NEXORA — META
     ====================================================== -->
 
     <meta charset="UTF-8">
@@ -20,7 +21,7 @@
 
     <meta
         name="description"
-        content="NEXORA — Your personal learning, productivity and growth hub."
+        content="NEXORA — Your personal learning, productivity and focus workspace."
     >
 
     <meta
@@ -28,15 +29,11 @@
         content="NEXORA"
     >
 
-    <meta
-        name="robots"
-        content="index, follow"
-    >
+    <title>NEXORA — Learning & Productivity Hub</title>
 
-    <title>NEXORA — Learning Hub</title>
 
     <!-- =====================================================
-         GOOGLE FONT
+         FONT
     ====================================================== -->
 
     <link
@@ -55,6 +52,7 @@
         rel="stylesheet"
     >
 
+
     <!-- =====================================================
          ICONS
     ====================================================== -->
@@ -64,9 +62,11 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     >
 
+
     <!-- =====================================================
          NEXORA CSS
-         DO NOT MOVE OR REMOVE
+         IMPORTANT:
+         CSS is completely separated.
     ====================================================== -->
 
     <link
@@ -79,11 +79,12 @@
 
 <body>
 
+
 <!-- =========================================================
      APP
 ========================================================= -->
 
-<div id="app">
+<div class="app">
 
 
     <!-- =====================================================
@@ -91,6 +92,7 @@
     ====================================================== -->
 
     <aside class="sidebar" id="sidebar">
+
 
         <!-- LOGO -->
 
@@ -118,8 +120,9 @@
 
         <nav class="nav" id="mainNav">
 
+
             <button
-                class="nav-item active"
+                class="active"
                 data-page="home"
                 type="button"
             >
@@ -136,7 +139,6 @@
 
 
             <button
-                class="nav-item"
                 data-page="tasks"
                 type="button"
             >
@@ -153,7 +155,38 @@
 
 
             <button
-                class="nav-item"
+                data-page="study"
+                type="button"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-book-open"></i>
+                </span>
+
+                <span>
+                    Study
+                </span>
+
+            </button>
+
+
+            <button
+                data-page="timer"
+                type="button"
+            >
+
+                <span class="nav-icon">
+                    <i class="fa-solid fa-clock"></i>
+                </span>
+
+                <span>
+                    Focus Timer
+                </span>
+
+            </button>
+
+
+            <button
                 data-page="notes"
                 type="button"
             >
@@ -170,24 +203,6 @@
 
 
             <button
-                class="nav-item"
-                data-page="focus"
-                type="button"
-            >
-
-                <span class="nav-icon">
-                    <i class="fa-solid fa-bullseye"></i>
-                </span>
-
-                <span>
-                    Focus
-                </span>
-
-            </button>
-
-
-            <button
-                class="nav-item"
                 data-page="quiz"
                 type="button"
             >
@@ -204,7 +219,6 @@
 
 
             <button
-                class="nav-item"
                 data-page="achievements"
                 type="button"
             >
@@ -219,31 +233,14 @@
 
             </button>
 
-        </nav>
-
-
-        <!-- SIDEBAR DIVIDER -->
-
-        <div class="nav-divider"></div>
-
-
-        <!-- SECONDARY NAVIGATION -->
-
-        <div class="nav-title">
-            System
-        </div>
-
-
-        <nav class="nav">
 
             <button
-                class="nav-item"
                 data-page="settings"
                 type="button"
             >
 
                 <span class="nav-icon">
-                    <i class="fa-solid fa-gear"></i>
+                    <i class="fa-solid fa-sliders"></i>
                 </span>
 
                 <span>
@@ -251,6 +248,7 @@
                 </span>
 
             </button>
+
 
         </nav>
 
@@ -272,7 +270,7 @@
                     </div>
 
                     <div class="user-mini-level">
-                        Level <span id="userLevel">1</span>
+                        Level 1 • Beginner
                     </div>
 
                 </div>
@@ -281,51 +279,40 @@
 
         </div>
 
+
     </aside>
-
-
-    <!-- =====================================================
-         MOBILE HEADER
-    ====================================================== -->
-
-    <header class="mobile-header">
-
-        <button
-            class="mobile-menu-btn"
-            id="mobileMenuBtn"
-            type="button"
-            aria-label="Open menu"
-        >
-
-            <i class="fa-solid fa-bars"></i>
-
-        </button>
-
-
-        <div class="mobile-logo">
-            NEX<span>ORA</span>
-        </div>
-
-
-        <button
-            class="mobile-action"
-            id="mobileThemeBtn"
-            type="button"
-            aria-label="Toggle theme"
-        >
-
-            <i class="fa-solid fa-moon"></i>
-
-        </button>
-
-    </header>
 
 
     <!-- =====================================================
          MAIN CONTENT
     ====================================================== -->
 
-    <main class="main" id="mainContent">
+    <main class="main">
+
+
+        <!-- =================================================
+             MOBILE HEADER
+        ================================================== -->
+
+        <header class="mobile-header">
+
+            <div class="mobile-logo">
+                NEX<span>ORA</span>
+            </div>
+
+
+            <button
+                class="icon-btn"
+                id="mobileMenuButton"
+                type="button"
+                aria-label="Open menu"
+            >
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </header>
 
 
         <!-- =================================================
@@ -334,14 +321,8 @@
 
         <div class="topbar">
 
-            <div class="topbar-left">
 
-                <div
-                    class="breadcrumb"
-                    id="breadcrumb"
-                >
-                    Workspace / Dashboard
-                </div>
+            <div>
 
                 <h1
                     class="page-title"
@@ -354,7 +335,7 @@
                     class="page-subtitle"
                     id="pageSubtitle"
                 >
-                    Learn smarter. Focus deeper. Grow every day.
+                    Learn smarter. Focus deeper. Grow faster.
                 </p>
 
             </div>
@@ -362,13 +343,15 @@
 
             <div class="top-actions">
 
+
                 <!-- SEARCH -->
 
                 <button
                     class="icon-btn"
-                    id="globalSearchBtn"
+                    id="globalSearchButton"
                     type="button"
                     aria-label="Search"
+                    title="Search"
                 >
 
                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -379,18 +362,14 @@
                 <!-- NOTIFICATIONS -->
 
                 <button
-                    class="icon-btn notification-btn"
-                    id="notificationBtn"
+                    class="icon-btn"
+                    id="notificationButton"
                     type="button"
                     aria-label="Notifications"
+                    title="Notifications"
                 >
 
                     <i class="fa-regular fa-bell"></i>
-
-                    <span
-                        class="notification-dot"
-                        id="notificationDot"
-                    ></span>
 
                 </button>
 
@@ -399,22 +378,28 @@
 
                 <button
                     class="icon-btn"
-                    id="themeBtn"
+                    id="themeButton"
                     type="button"
                     aria-label="Toggle theme"
+                    title="Toggle theme"
                 >
 
-                    <i class="fa-solid fa-moon"></i>
+                    <i
+                        class="fa-solid fa-moon"
+                        id="themeIcon"
+                    ></i>
 
                 </button>
 
+
             </div>
+
 
         </div>
 
 
         <!-- =================================================
-             HOME PAGE
+             PAGE: HOME
         ================================================== -->
 
         <section
@@ -428,79 +413,69 @@
 
             <section class="hero">
 
-                <div class="hero-content">
 
-                    <div class="hero-badge">
+                <div class="hero-badge">
 
-                        <span class="hero-badge-dot"></span>
+                    <i class="fa-solid fa-sparkles"></i>
 
-                        <span id="heroGreeting">
-                            Welcome back
-                        </span>
-
-                    </div>
-
-
-                    <h2>
-                        Build your future,
-                        <span>one day at a time.</span>
-                    </h2>
-
-
-                    <p>
-                        NEXORA brings your learning,
-                        focus, tasks and personal growth
-                        into one powerful workspace.
-                    </p>
-
-
-                    <div class="hero-actions">
-
-                        <button
-                            class="btn btn-primary"
-                            data-action="focus"
-                            type="button"
-                        >
-
-                            <i class="fa-solid fa-play"></i>
-
-                            Start Focus
-
-                        </button>
-
-
-                        <button
-                            class="btn btn-secondary"
-                            data-action="task"
-                            type="button"
-                        >
-
-                            <i class="fa-solid fa-plus"></i>
-
-                            Add Task
-
-                        </button>
-
-                    </div>
+                    NEXORA EXPERIENCE
 
                 </div>
 
 
-                <div class="hero-visual">
+                <h2>
 
-                    <div class="hero-orbit orbit-one"></div>
+                    Welcome back to
+                    <span>NEXORA.</span>
 
-                    <div class="hero-orbit orbit-two"></div>
+                    <br>
 
-                    <div class="hero-orbit orbit-three"></div>
+                    Build your future,
+                    one focused day at a time.
 
-                    <div class="hero-core">
+                </h2>
 
-                        <i class="fa-solid fa-bolt"></i>
 
-                    </div>
+                <p>
+
+                    Your personal workspace for learning,
+                    productivity, focus, notes, tasks and growth.
+
+                </p>
+
+
+                <div class="hero-actions">
+
+                    <button
+                        class="btn btn-primary"
+                        data-page-target="timer"
+                        type="button"
+                    >
+
+                        <i class="fa-solid fa-play"></i>
+
+                        Start Focus
+
+                    </button>
+
+
+                    <button
+                        class="btn btn-secondary"
+                        data-page-target="tasks"
+                        type="button"
+                    >
+
+                        <i class="fa-solid fa-list-check"></i>
+
+                        View Tasks
+
+                    </button>
 
                 </div>
+
+
+                <div class="hero-orb"></div>
+
 
             </section>
 
@@ -512,122 +487,97 @@
             <section class="stats-grid">
 
 
-                <!-- TASKS -->
-
                 <article class="stat-card">
 
                     <div class="stat-top">
 
-                        <div class="stat-icon purple">
-                            <i class="fa-solid fa-list-check"></i>
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-check"></i>
                         </div>
 
-                        <span class="stat-trend">
-                            <i class="fa-solid fa-arrow-up"></i>
-                            Active
+                        <span class="stat-label">
+                            COMPLETED
                         </span>
 
                     </div>
 
                     <div
                         class="stat-number"
-                        id="statTasks"
+                        id="completedTasksStat"
                     >
                         0
                     </div>
 
-                    <div class="stat-label">
-                        Active Tasks
-                    </div>
-
                 </article>
 
-
-                <!-- COMPLETED -->
 
                 <article class="stat-card">
 
                     <div class="stat-top">
 
-                        <div class="stat-icon green">
-                            <i class="fa-solid fa-circle-check"></i>
-                        </div>
-
-                        <span class="stat-trend success">
-                            Done
-                        </span>
-
-                    </div>
-
-                    <div
-                        class="stat-number"
-                        id="statCompleted"
-                    >
-                        0
-                    </div>
-
-                    <div class="stat-label">
-                        Completed Tasks
-                    </div>
-
-                </article>
-
-
-                <!-- FOCUS -->
-
-                <article class="stat-card">
-
-                    <div class="stat-top">
-
-                        <div class="stat-icon blue">
-                            <i class="fa-solid fa-clock"></i>
-                        </div>
-
-                        <span class="stat-trend">
-                            Focus
-                        </span>
-
-                    </div>
-
-                    <div
-                        class="stat-number"
-                        id="statFocus"
-                    >
-                        0m
-                    </div>
-
-                    <div class="stat-label">
-                        Focus Time
-                    </div>
-
-                </article>
-
-
-                <!-- STREAK -->
-
-                <article class="stat-card">
-
-                    <div class="stat-top">
-
-                        <div class="stat-icon orange">
+                        <div class="stat-icon">
                             <i class="fa-solid fa-fire"></i>
                         </div>
 
-                        <span class="stat-trend warning">
-                            Streak
+                        <span class="stat-label">
+                            STREAK
                         </span>
 
                     </div>
 
                     <div
                         class="stat-number"
-                        id="statStreak"
+                        id="streakStat"
                     >
                         0
                     </div>
 
-                    <div class="stat-label">
-                        Day Streak
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+
+                        <span class="stat-label">
+                            FOCUS MIN
+                        </span>
+
+                    </div>
+
+                    <div
+                        class="stat-number"
+                        id="focusMinutesStat"
+                    >
+                        0
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <span class="stat-label">
+                            XP
+                        </span>
+
+                    </div>
+
+                    <div
+                        class="stat-number"
+                        id="xpStat"
+                    >
+                        0
                     </div>
 
                 </article>
@@ -637,41 +587,34 @@
 
 
             <!-- =================================================
-                 DASHBOARD GRID
+                 CONTENT GRID
             ================================================== -->
 
-            <div class="content-grid">
+            <section class="content-grid">
 
 
                 <!-- LEFT COLUMN -->
 
-                <div class="content-column">
+                <div>
 
 
-                    <!-- PROGRESS CARD -->
+                    <!-- TODAY'S PROGRESS -->
 
-                    <section class="card progress-card">
+                    <article class="card">
 
                         <div class="card-header">
 
-                            <div>
-
-                                <div class="card-kicker">
-                                    YOUR JOURNEY
-                                </div>
-
-                                <h3 class="card-title">
-                                    Daily Progress
-                                </h3>
-
+                            <div class="card-title">
+                                Today's Progress
                             </div>
 
-                            <div
-                                class="progress-percentage"
-                                id="dailyProgressText"
+                            <button
+                                class="card-link"
+                                data-page-target="tasks"
+                                type="button"
                             >
-                                0%
-                            </div>
+                                View all
+                            </button>
 
                         </div>
 
@@ -679,11 +622,11 @@
                         <div class="progress-info">
 
                             <span>
-                                Today's progress
+                                Daily completion
                             </span>
 
-                            <span id="progressLabel">
-                                0 / 5
+                            <span id="dailyProgressText">
+                                0%
                             </span>
 
                         </div>
@@ -700,108 +643,30 @@
                         </div>
 
 
-                        <div class="progress-footer">
-
-                            <span>
-                                <i class="fa-solid fa-star"></i>
-                                Keep going
-                            </span>
-
-                            <span id="progressMessage">
-                                Let's get started.
-                            </span>
-
-                        </div>
-
-                    </section>
-
-
-                    <!-- TASK CARD -->
-
-                    <section class="card">
-
-                        <div class="card-header">
-
-                            <div>
-
-                                <div class="card-kicker">
-                                    PRODUCTIVITY
-                                </div>
-
-                                <h3 class="card-title">
-                                    Today's Tasks
-                                </h3>
-
-                            </div>
-
-                            <button
-                                class="card-link"
-                                data-action="view-tasks"
-                                type="button"
-                            >
-                                View all
-                            </button>
-
-                        </div>
-
-
                         <div
                             class="task-list"
                             id="dashboardTaskList"
                         >
 
-                            <!-- JavaScript will render tasks here -->
+                            <!-- JS inserts tasks -->
 
                         </div>
 
 
-                        <div
-                            class="empty"
-                            id="dashboardTaskEmpty"
-                            hidden
-                        >
-
-                            <div class="empty-icon">
-                                <i class="fa-solid fa-check-double"></i>
-                            </div>
-
-                            <div class="empty-title">
-                                All clear!
-                            </div>
-
-                            <div class="empty-text">
-                                No tasks waiting for you.
-                            </div>
-
-                        </div>
-
-                    </section>
-
-
-                </div>
-
-
-                <!-- RIGHT COLUMN -->
-
-                <div class="content-column">
+                    </article>
 
 
                     <!-- QUICK ACTIONS -->
 
-                    <section class="card">
+                    <article
+                        class="card"
+                        style="margin-top:20px;"
+                    >
 
                         <div class="card-header">
 
-                            <div>
-
-                                <div class="card-kicker">
-                                    SHORTCUTS
-                                </div>
-
-                                <h3 class="card-title">
-                                    Quick Actions
-                                </h3>
-
+                            <div class="card-title">
+                                Quick Actions
                             </div>
 
                         </div>
@@ -812,7 +677,7 @@
 
                             <button
                                 class="quick"
-                                data-action="task"
+                                data-action="new-task"
                                 type="button"
                             >
 
@@ -825,7 +690,7 @@
                                 </div>
 
                                 <div class="quick-desc">
-                                    Add something to do
+                                    Add something to accomplish.
                                 </div>
 
                             </button>
@@ -833,7 +698,7 @@
 
                             <button
                                 class="quick"
-                                data-action="note"
+                                data-action="new-note"
                                 type="button"
                             >
 
@@ -846,7 +711,7 @@
                                 </div>
 
                                 <div class="quick-desc">
-                                    Capture an idea
+                                    Capture an idea instantly.
                                 </div>
 
                             </button>
@@ -854,12 +719,12 @@
 
                             <button
                                 class="quick"
-                                data-action="focus"
+                                data-action="start-timer"
                                 type="button"
                             >
 
                                 <div class="quick-icon">
-                                    <i class="fa-solid fa-bullseye"></i>
+                                    <i class="fa-solid fa-bolt"></i>
                                 </div>
 
                                 <div class="quick-title">
@@ -867,7 +732,7 @@
                                 </div>
 
                                 <div class="quick-desc">
-                                    Deep work mode
+                                    Start a distraction-free session.
                                 </div>
 
                             </button>
@@ -875,7 +740,7 @@
 
                             <button
                                 class="quick"
-                                data-action="quiz"
+                                data-action="open-quiz"
                                 type="button"
                             >
 
@@ -884,11 +749,11 @@
                                 </div>
 
                                 <div class="quick-title">
-                                    Take Quiz
+                                    Quick Quiz
                                 </div>
 
                                 <div class="quick-desc">
-                                    Test your knowledge
+                                    Test your knowledge.
                                 </div>
 
                             </button>
@@ -896,89 +761,154 @@
 
                         </div>
 
-                    </section>
-
-
-                    <!-- QUOTE -->
-
-                    <section class="card quote-card">
-
-                        <div class="quote-icon">
-                            <i class="fa-solid fa-quote-left"></i>
-                        </div>
-
-                        <blockquote id="dailyQuote">
-                            Small progress is still progress.
-                        </blockquote>
-
-                        <div class="quote-author">
-                            — NEXORA
-                        </div>
-
-                    </section>
-
-
-                    <!-- LEVEL CARD -->
-
-                    <section class="card level-card">
-
-                        <div class="level-header">
-
-                            <div>
-
-                                <div class="card-kicker">
-                                    YOUR LEVEL
-                                </div>
-
-                                <div class="level-number">
-                                    Level <span id="levelDisplay">1</span>
-                                </div>
-
-                            </div>
-
-                            <div class="level-xp">
-                                <span id="xpDisplay">0</span>
-                                XP
-                            </div>
-
-                        </div>
-
-
-                        <div class="xp-progress">
-
-                            <div
-                                class="xp-bar"
-                                id="xpBar"
-                                style="width:0%"
-                            ></div>
-
-                        </div>
-
-
-                        <div class="xp-info">
-
-                            <span id="xpCurrent">
-                                0 XP
-                            </span>
-
-                            <span id="xpNext">
-                                100 XP
-                            </span>
-
-                        </div>
-
-                    </section>
+                    </article>
 
 
                 </div>
 
-            </div>
+
+                <!-- RIGHT COLUMN -->
+
+                <div>
+
+
+                    <!-- DAILY QUOTE -->
+
+                    <article class="card">
+
+                        <div class="card-header">
+
+                            <div class="card-title">
+                                Daily Motivation
+                            </div>
+
+                            <i
+                                class="fa-solid fa-quote-right"
+                                style="color:var(--primary2);"
+                            ></i>
+
+                        </div>
+
+
+                        <p
+                            id="dailyQuote"
+                            class="quote-text"
+                        >
+                            Discipline is choosing what you want most
+                            over what you want now.
+                        </p>
+
+
+                        <div
+                            id="quoteAuthor"
+                            class="quote-author"
+                        >
+                            — NEXORA
+                        </div>
+
+
+                    </article>
+
+
+                    <!-- UPCOMING -->
+
+                    <article
+                        class="card"
+                        style="margin-top:20px;"
+                    >
+
+                        <div class="card-header">
+
+                            <div class="card-title">
+                                Your Journey
+                            </div>
+
+                        </div>
+
+
+                        <div class="journey-list">
+
+
+                            <div class="journey-item">
+
+                                <div class="journey-icon">
+                                    <i class="fa-solid fa-seedling"></i>
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Start
+                                    </strong>
+
+                                    <p>
+                                        Build your first habit.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="journey-item">
+
+                                <div class="journey-icon">
+                                    <i class="fa-solid fa-fire"></i>
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Consistency
+                                    </strong>
+
+                                    <p>
+                                        Keep your streak alive.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="journey-item">
+
+                                <div class="journey-icon">
+                                    <i class="fa-solid fa-crown"></i>
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Mastery
+                                    </strong>
+
+                                    <p>
+                                        Become the best version of you.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </article>
+
+
+                </div>
+
+
+            </section>
+
 
         </section>
 
 
         <!-- =================================================
-             TASKS PAGE
+             PAGE: TASKS
         ================================================== -->
 
         <section
@@ -987,27 +917,25 @@
             data-page-content="tasks"
         >
 
-            <div class="page-section-header">
 
-                <div>
+            <div class="toolbar">
 
-                    <div class="section-kicker">
-                        PRODUCTIVITY
-                    </div>
 
-                    <h2>
-                        Tasks
-                    </h2>
+                <div class="search">
 
-                    <p>
-                        Organize your work and stay on track.
-                    </p>
+                    <input
+                        type="search"
+                        id="taskSearch"
+                        placeholder="Search your tasks..."
+                        autocomplete="off"
+                    >
 
                 </div>
 
+
                 <button
                     class="btn btn-primary"
-                    data-action="task"
+                    id="newTaskButton"
                     type="button"
                 >
 
@@ -1017,65 +945,34 @@
 
                 </button>
 
+
             </div>
 
 
-            <section class="card">
+            <article class="card">
 
+                <div class="card-header">
 
-                <div class="toolbar">
-
-                    <div class="search">
-
-                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
-
-                        <input
-                            type="search"
-                            id="taskSearch"
-                            placeholder="Search tasks..."
-                            autocomplete="off"
-                        >
-
+                    <div class="card-title">
+                        All Tasks
                     </div>
 
-
-                    <div class="filter-group">
-
-                        <button
-                            class="filter-btn active"
-                            data-task-filter="all"
-                            type="button"
-                        >
-                            All
-                        </button>
-
-                        <button
-                            class="filter-btn"
-                            data-task-filter="active"
-                            type="button"
-                        >
-                            Active
-                        </button>
-
-                        <button
-                            class="filter-btn"
-                            data-task-filter="completed"
-                            type="button"
-                        >
-                            Completed
-                        </button>
-
-                    </div>
+                    <span
+                        class="card-link"
+                        id="taskCount"
+                    >
+                        0 tasks
+                    </span>
 
                 </div>
 
 
                 <div
-                    class="task-list task-page-list"
-                    id="taskList"
+                    class="task-list"
+                    id="allTaskList"
                 >
 
-                    <!-- JavaScript -->
+                    <!-- JS renders tasks -->
 
                 </div>
 
@@ -1087,7 +984,7 @@
                 >
 
                     <div class="empty-icon">
-                        <i class="fa-solid fa-list-check"></i>
+                        <i class="fa-solid fa-clipboard-check"></i>
                     </div>
 
                     <div class="empty-title">
@@ -1100,192 +997,330 @@
 
                 </div>
 
+
+            </article>
+
+
+        </section>
+
+
+        <!-- =================================================
+             PAGE: STUDY
+        ================================================== -->
+
+        <section
+            class="page"
+            id="page-study"
+            data-page-content="study"
+        >
+
+
+            <article class="hero study-hero">
+
+                <div class="hero-badge">
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                    LEARNING HUB
+
+                </div>
+
+
+                <h2>
+                    Learn something
+                    <span>worth knowing.</span>
+                </h2>
+
+
+                <p>
+                    Organize your learning and turn knowledge
+                    into real progress.
+                </p>
+
+            </article>
+
+
+            <section class="content-grid">
+
+
+                <article class="card">
+
+                    <div class="card-header">
+
+                        <div class="card-title">
+                            Study Progress
+                        </div>
+
+                        <span
+                            class="card-link"
+                            id="studyPercent"
+                        >
+                            0%
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-info">
+
+                        <span>
+                            Overall learning
+                        </span>
+
+                        <span>
+                            Keep going
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar"
+                            id="studyProgressBar"
+                            style="width:0%"
+                        ></div>
+
+                    </div>
+
+
+                    <div class="study-subjects">
+
+
+                        <button
+                            class="subject-card"
+                            data-subject="English"
+                            type="button"
+                        >
+
+                            <span class="subject-icon">
+                                <i class="fa-solid fa-language"></i>
+                            </span>
+
+                            <span>
+                                <strong>
+                                    English
+                                </strong>
+
+                                <small>
+                                    Language
+                                </small>
+                            </span>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+
+                        <button
+                            class="subject-card"
+                            data-subject="Programming"
+                            type="button"
+                        >
+
+                            <span class="subject-icon">
+                                <i class="fa-solid fa-code"></i>
+                            </span>
+
+                            <span>
+                                <strong>
+                                    Programming
+                                </strong>
+
+                                <small>
+                                    Technology
+                                </small>
+                            </span>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+
+                        <button
+                            class="subject-card"
+                            data-subject="General Knowledge"
+                            type="button"
+                        >
+
+                            <span class="subject-icon">
+                                <i class="fa-solid fa-globe"></i>
+                            </span>
+
+                            <span>
+                                <strong>
+                                    General Knowledge
+                                </strong>
+
+                                <small>
+                                    Explore
+                                </small>
+                            </span>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+
+                    </div>
+
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="card-header">
+
+                        <div class="card-title">
+                            Learning Strategy
+                        </div>
+
+                    </div>
+
+
+                    <div class="strategy-list">
+
+
+                        <div class="strategy-item">
+
+                            <span>
+                                <i class="fa-solid fa-1"></i>
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Learn
+                                </strong>
+
+                                <p>
+                                    Understand the concept.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="strategy-item">
+
+                            <span>
+                                <i class="fa-solid fa-2"></i>
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Practice
+                                </strong>
+
+                                <p>
+                                    Apply what you learned.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="strategy-item">
+
+                            <span>
+                                <i class="fa-solid fa-3"></i>
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Review
+                                </strong>
+
+                                <p>
+                                    Strengthen your memory.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
             </section>
 
-        </section>
-
-
-        <!-- =================================================
-             NOTES PAGE
-        ================================================== -->
-
-        <section
-            class="page"
-            id="page-notes"
-            data-page-content="notes"
-        >
-
-            <div class="page-section-header">
-
-                <div>
-
-                    <div class="section-kicker">
-                        KNOWLEDGE
-                    </div>
-
-                    <h2>
-                        Notes
-                    </h2>
-
-                    <p>
-                        Keep your ideas, lessons and thoughts organized.
-                    </p>
-
-                </div>
-
-                <button
-                    class="btn btn-primary"
-                    data-action="note"
-                    type="button"
-                >
-
-                    <i class="fa-solid fa-plus"></i>
-
-                    New Note
-
-                </button>
-
-            </div>
-
-
-            <div class="notes-toolbar">
-
-                <div class="search">
-
-                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
-
-                    <input
-                        type="search"
-                        id="noteSearch"
-                        placeholder="Search notes..."
-                        autocomplete="off"
-                    >
-
-                </div>
-
-            </div>
-
-
-            <div
-                class="notes-grid"
-                id="notesGrid"
-            >
-
-                <!-- JavaScript -->
-
-            </div>
-
-
-            <div
-                class="empty"
-                id="notesEmpty"
-                hidden
-            >
-
-                <div class="empty-icon">
-                    <i class="fa-solid fa-note-sticky"></i>
-                </div>
-
-                <div class="empty-title">
-                    No notes yet
-                </div>
-
-                <div class="empty-text">
-                    Save your first idea.
-                </div>
-
-            </div>
 
         </section>
 
 
         <!-- =================================================
-             FOCUS PAGE
+             PAGE: TIMER
         ================================================== -->
 
         <section
             class="page"
-            id="page-focus"
-            data-page-content="focus"
+            id="page-timer"
+            data-page-content="timer"
         >
 
-            <div class="page-section-header">
 
-                <div>
-
-                    <div class="section-kicker">
-                        DEEP WORK
-                    </div>
-
-                    <h2>
-                        Focus
-                    </h2>
-
-                    <p>
-                        Eliminate distractions and focus on what matters.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <section class="card timer-card">
+            <article class="card timer-card">
 
 
                 <div class="timer-mode">
 
+
                     <button
-                        class="timer-mode-btn active"
+                        class="active"
                         data-timer-mode="focus"
                         type="button"
                     >
                         Focus
                     </button>
 
+
                     <button
-                        class="timer-mode-btn"
                         data-timer-mode="short"
                         type="button"
                     >
                         Short Break
                     </button>
 
+
                     <button
-                        class="timer-mode-btn"
                         data-timer-mode="long"
                         type="button"
                     >
                         Long Break
                     </button>
 
+
                 </div>
 
 
-                <div class="timer-ring">
+                <div
+                    class="timer-display"
+                    id="timerDisplay"
+                >
+                    25:00
+                </div>
 
-                    <div class="timer-ring-inner">
 
-                        <div
-                            class="timer-display"
-                            id="timerDisplay"
-                        >
-                            25:00
-                        </div>
-
-                        <div
-                            class="timer-status"
-                            id="timerStatus"
-                        >
-                            Ready to focus
-                        </div>
-
-                    </div>
-
+                <div
+                    class="timer-status"
+                    id="timerStatus"
+                >
+                    Ready to focus.
                 </div>
 
 
                 <div class="timer-controls">
+
 
                     <button
                         class="btn btn-secondary"
@@ -1312,21 +1347,33 @@
 
                     </button>
 
+
+                    <button
+                        class="btn btn-secondary"
+                        id="timerSkip"
+                        type="button"
+                    >
+
+                        <i class="fa-solid fa-forward"></i>
+
+                        Skip
+
+                    </button>
+
+
                 </div>
 
 
                 <div class="timer-stats">
 
+
                     <div>
 
-                        <span
-                            id="focusSessions"
-                            class="timer-stat-number"
-                        >
+                        <strong id="timerSessions">
                             0
-                        </span>
+                        </strong>
 
-                        <span class="timer-stat-label">
+                        <span>
                             Sessions
                         </span>
 
@@ -1335,101 +1382,102 @@
 
                     <div>
 
-                        <span
-                            id="focusMinutes"
-                            class="timer-stat-number"
-                        >
+                        <strong id="timerTodayMinutes">
                             0
-                        </span>
+                        </strong>
 
-                        <span class="timer-stat-label">
-                            Minutes
+                        <span>
+                            Minutes today
                         </span>
 
                     </div>
 
-
-                    <div>
-
-                        <span
-                            id="focusToday"
-                            class="timer-stat-number"
-                        >
-                            0
-                        </span>
-
-                        <span class="timer-stat-label">
-                            Today
-                        </span>
-
-                    </div>
 
                 </div>
 
-            </section>
 
+            </article>
 
-            <section class="focus-tips">
-
-                <div class="card">
-
-                    <div class="card-kicker">
-                        FOCUS TIPS
-                    </div>
-
-                    <h3 class="card-title">
-                        Make your next session count.
-                    </h3>
-
-                    <div class="tips-grid">
-
-                        <div class="tip">
-
-                            <span>
-                                01
-                            </span>
-
-                            <p>
-                                Put your phone away.
-                            </p>
-
-                        </div>
-
-                        <div class="tip">
-
-                            <span>
-                                02
-                            </span>
-
-                            <p>
-                                Choose one clear goal.
-                            </p>
-
-                        </div>
-
-                        <div class="tip">
-
-                            <span>
-                                03
-                            </span>
-
-                            <p>
-                                Work until the timer ends.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
 
         </section>
 
 
         <!-- =================================================
-             QUIZ PAGE
+             PAGE: NOTES
+        ================================================== -->
+
+        <section
+            class="page"
+            id="page-notes"
+            data-page-content="notes"
+        >
+
+
+            <div class="toolbar">
+
+                <div class="search">
+
+                    <input
+                        type="search"
+                        id="noteSearch"
+                        placeholder="Search notes..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <button
+                    class="btn btn-primary"
+                    id="newNoteButton"
+                    type="button"
+                >
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    New Note
+
+                </button>
+
+            </div>
+
+
+            <div
+                class="notes-grid"
+                id="notesGrid"
+            >
+
+                <!-- JS renders notes -->
+
+            </div>
+
+
+            <div
+                class="empty"
+                id="notesEmpty"
+                hidden
+            >
+
+                <div class="empty-icon">
+                    <i class="fa-regular fa-note-sticky"></i>
+                </div>
+
+                <div class="empty-title">
+                    No notes yet
+                </div>
+
+                <div class="empty-text">
+                    Your ideas deserve a place here.
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =================================================
+             PAGE: QUIZ
         ================================================== -->
 
         <section
@@ -1438,79 +1486,40 @@
             data-page-content="quiz"
         >
 
-            <div class="page-section-header">
 
-                <div>
-
-                    <div class="section-kicker">
-                        KNOWLEDGE TEST
-                    </div>
-
-                    <h2>
-                        Quiz
-                    </h2>
-
-                    <p>
-                        Challenge yourself and earn XP.
-                    </p>
-
-                </div>
-
-                <div class="quiz-score-badge">
-
-                    <i class="fa-solid fa-star"></i>
-
-                    <span id="quizScore">
-                        0
-                    </span>
-                    XP
-
-                </div>
-
-            </div>
-
-
-            <section class="card quiz-box">
+            <article class="card quiz-box">
 
 
                 <div class="quiz-meta">
 
-                    <span id="quizQuestionNumber">
-                        Question 1 / 10
+                    <span id="quizProgress">
+                        Question 1 of 10
                     </span>
 
-                    <span id="quizProgressText">
-                        0%
+                    <span id="quizScore">
+                        Score: 0
                     </span>
 
                 </div>
 
 
-                <div class="quiz-progress">
+                <div class="progress">
 
                     <div
-                        class="quiz-progress-bar"
+                        class="progress-bar"
                         id="quizProgressBar"
-                        style="width:0%"
+                        style="width:10%"
                     ></div>
 
                 </div>
 
 
                 <div
-                    class="quiz-category"
-                    id="quizCategory"
-                >
-                    English
-                </div>
-
-
-                <h3
                     class="quiz-question"
                     id="quizQuestion"
                 >
                     Loading question...
-                </h3>
+                </div>
 
 
                 <div
@@ -1518,18 +1527,21 @@
                     id="quizAnswers"
                 >
 
-                    <!-- JavaScript -->
+                    <!-- JS renders answers -->
 
                 </div>
 
 
-                <div class="quiz-footer">
+                <div
+                    class="quiz-actions"
+                    id="quizActions"
+                >
 
                     <button
-                        class="btn btn-secondary"
-                        id="quizNext"
+                        class="btn btn-primary"
+                        id="nextQuestionButton"
                         type="button"
-                        disabled
+                        hidden
                     >
 
                         Next Question
@@ -1540,13 +1552,15 @@
 
                 </div>
 
-            </section>
+
+            </article>
+
 
         </section>
 
 
         <!-- =================================================
-             ACHIEVEMENTS PAGE
+             PAGE: ACHIEVEMENTS
         ================================================== -->
 
         <section
@@ -1555,61 +1569,30 @@
             data-page-content="achievements"
         >
 
-            <div class="page-section-header">
 
-                <div>
+            <article class="hero">
 
-                    <div class="section-kicker">
-                        MILESTONES
-                    </div>
-
-                    <h2>
-                        Achievements
-                    </h2>
-
-                    <p>
-                        Every milestone is proof that you're moving forward.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <section class="achievement-summary card">
-
-                <div class="achievement-summary-icon">
+                <div class="hero-badge">
 
                     <i class="fa-solid fa-trophy"></i>
 
-                </div>
-
-                <div class="achievement-summary-info">
-
-                    <h3>
-                        Your Collection
-                    </h3>
-
-                    <p>
-                        Unlock achievements by learning,
-                        focusing and completing tasks.
-                    </p>
+                    YOUR PROGRESS
 
                 </div>
 
-                <div class="achievement-count">
 
-                    <strong id="achievementUnlocked">
-                        0
-                    </strong>
+                <h2>
+                    Every small win
+                    <span>counts.</span>
+                </h2>
 
-                    <span>
-                        / <span id="achievementTotal">0</span>
-                    </span>
 
-                </div>
+                <p>
+                    Unlock achievements as you learn,
+                    focus and complete your goals.
+                </p>
 
-            </section>
+            </article>
 
 
             <div
@@ -1617,15 +1600,16 @@
                 id="achievementsGrid"
             >
 
-                <!-- JavaScript -->
+                <!-- JS renders achievements -->
 
             </div>
+
 
         </section>
 
 
         <!-- =================================================
-             SETTINGS PAGE
+             PAGE: SETTINGS
         ================================================== -->
 
         <section
@@ -1634,56 +1618,42 @@
             data-page-content="settings"
         >
 
-            <div class="page-section-header">
 
-                <div>
+            <article class="card settings">
 
-                    <div class="section-kicker">
-                        PREFERENCES
+
+                <div class="card-header">
+
+                    <div class="card-title">
+                        NEXORA Settings
                     </div>
 
-                    <h2>
-                        Settings
-                    </h2>
-
-                    <p>
-                        Customize your NEXORA experience.
-                    </p>
-
                 </div>
 
-            </div>
 
-
-            <section class="card settings">
-
-
-                <!-- APPEARANCE -->
-
-                <div class="settings-section-title">
-                    Appearance
-                </div>
-
+                <!-- THEME -->
 
                 <div class="setting">
 
-                    <div class="setting-info">
+                    <div>
 
                         <div class="setting-title">
                             Dark Mode
                         </div>
 
                         <div class="setting-desc">
-                            Use the dark NEXORA interface.
+                            Switch between dark and light appearance.
                         </div>
 
                     </div>
 
+
                     <button
                         class="switch on"
-                        id="darkModeSwitch"
+                        id="themeSwitch"
                         type="button"
                         aria-label="Toggle dark mode"
+                        aria-pressed="true"
                     ></button>
 
                 </div>
@@ -1691,147 +1661,136 @@
 
                 <!-- NOTIFICATIONS -->
 
-                <div class="settings-section-title">
-                    Notifications
-                </div>
-
-
                 <div class="setting">
 
-                    <div class="setting-info">
+                    <div>
 
                         <div class="setting-title">
-                            Daily Reminders
+                            Notifications
                         </div>
 
                         <div class="setting-desc">
-                            Get reminders to keep your progress going.
+                            Receive useful reminders from NEXORA.
                         </div>
 
                     </div>
 
+
                     <button
                         class="switch on"
-                        id="reminderSwitch"
+                        id="notificationSwitch"
                         type="button"
-                        aria-label="Toggle reminders"
+                        aria-label="Toggle notifications"
+                        aria-pressed="true"
                     ></button>
 
                 </div>
 
 
+                <!-- SOUND -->
+
                 <div class="setting">
 
-                    <div class="setting-info">
+                    <div>
 
                         <div class="setting-title">
-                            Focus Notifications
+                            Timer Sound
                         </div>
 
                         <div class="setting-desc">
-                            Notify you when a focus session ends.
+                            Play a sound when a focus session ends.
                         </div>
 
                     </div>
+
 
                     <button
                         class="switch on"
-                        id="focusNotificationSwitch"
-                        type="button"
-                        aria-label="Toggle focus notifications"
-                    ></button>
-
-                </div>
-
-
-                <!-- EXPERIENCE -->
-
-                <div class="settings-section-title">
-                    Experience
-                </div>
-
-
-                <div class="setting">
-
-                    <div class="setting-info">
-
-                        <div class="setting-title">
-                            Animations
-                        </div>
-
-                        <div class="setting-desc">
-                            Enable interface animations and transitions.
-                        </div>
-
-                    </div>
-
-                    <button
-                        class="switch on"
-                        id="animationSwitch"
-                        type="button"
-                        aria-label="Toggle animations"
-                    ></button>
-
-                </div>
-
-
-                <div class="setting">
-
-                    <div class="setting-info">
-
-                        <div class="setting-title">
-                            Sound Effects
-                        </div>
-
-                        <div class="setting-desc">
-                            Enable subtle interface sounds.
-                        </div>
-
-                    </div>
-
-                    <button
-                        class="switch"
                         id="soundSwitch"
                         type="button"
-                        aria-label="Toggle sounds"
+                        aria-label="Toggle timer sound"
+                        aria-pressed="true"
                     ></button>
 
                 </div>
 
 
-                <!-- DATA -->
-
-                <div class="settings-section-title">
-                    Data
-                </div>
-
+                <!-- RESET -->
 
                 <div class="setting">
 
-                    <div class="setting-info">
+                    <div>
 
                         <div class="setting-title">
                             Reset Workspace
                         </div>
 
                         <div class="setting-desc">
-                            Delete all local NEXORA data and start fresh.
+                            Delete locally stored NEXORA data.
                         </div>
 
                     </div>
 
+
                     <button
                         class="btn btn-danger"
-                        id="resetDataBtn"
+                        id="resetDataButton"
                         type="button"
                     >
-                        Reset
+
+                        <i class="fa-solid fa-trash"></i>
+
+                        Reset Data
+
                     </button>
 
                 </div>
 
 
-            </section>
+            </article>
+
+
+            <article
+                class="card about-card"
+                style="margin-top:20px;"
+            >
+
+                <div class="card-header">
+
+                    <div class="card-title">
+                        About NEXORA
+                    </div>
+
+                </div>
+
+
+                <div class="about-content">
+
+                    <div class="about-logo">
+                        N
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            NEXORA
+                        </h3>
+
+                        <p>
+                            Learn. Focus. Grow.
+                        </p>
+
+                        <small>
+                            Your personal digital learning workspace.
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+            </article>
+
 
         </section>
 
@@ -1839,467 +1798,433 @@
     </main>
 
 
-    <!-- =====================================================
-         MOBILE BOTTOM NAVIGATION
-    ====================================================== -->
+</div>
 
-    <nav
-        class="bottom-nav"
-        id="bottomNav"
+
+<!-- =========================================================
+     MOBILE BOTTOM NAVIGATION
+========================================================= -->
+
+<nav
+    class="bottom-nav"
+    id="bottomNav"
+    aria-label="Mobile navigation"
+>
+
+
+    <button
+        class="active"
+        data-page="home"
+        type="button"
     >
 
-        <button
-            class="bottom-nav-item active"
-            data-page="home"
-            type="button"
-        >
+        <span class="bottom-icon">
+            <i class="fa-solid fa-house"></i>
+        </span>
 
-            <span class="bottom-icon">
-                <i class="fa-solid fa-house"></i>
-            </span>
+        <span>
+            Home
+        </span>
 
-            <span>
-                Home
-            </span>
-
-        </button>
+    </button>
 
 
-        <button
-            class="bottom-nav-item"
-            data-page="tasks"
-            type="button"
-        >
-
-            <span class="bottom-icon">
-                <i class="fa-solid fa-list-check"></i>
-            </span>
-
-            <span>
-                Tasks
-            </span>
-
-        </button>
-
-
-        <button
-            class="bottom-nav-item"
-            data-page="focus"
-            type="button"
-        >
-
-            <span class="bottom-icon">
-                <i class="fa-solid fa-bullseye"></i>
-            </span>
-
-            <span>
-                Focus
-            </span>
-
-        </button>
-
-
-        <button
-            class="bottom-nav-item"
-            data-page="notes"
-            type="button"
-        >
-
-            <span class="bottom-icon">
-                <i class="fa-solid fa-note-sticky"></i>
-            </span>
-
-            <span>
-                Notes
-            </span>
-
-        </button>
-
-
-        <button
-            class="bottom-nav-item"
-            data-page="settings"
-            type="button"
-        >
-
-            <span class="bottom-icon">
-                <i class="fa-solid fa-gear"></i>
-            </span>
-
-            <span>
-                Settings
-            </span>
-
-        </button>
-
-    </nav>
-
-
-    <!-- =====================================================
-         OVERLAY
-    ====================================================== -->
-
-    <div
-        class="overlay"
-        id="overlay"
-    ></div>
-
-
-    <!-- =====================================================
-         TASK MODAL
-    ====================================================== -->
-
-    <div
-        class="modal"
-        id="taskModal"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="taskModalTitle"
+    <button
+        data-page="tasks"
+        type="button"
     >
 
-        <div class="modal-box">
+        <span class="bottom-icon">
+            <i class="fa-solid fa-list-check"></i>
+        </span>
 
-            <div class="modal-header">
+        <span>
+            Tasks
+        </span>
 
-                <div>
+    </button>
 
-                    <div class="card-kicker">
-                        PRODUCTIVITY
-                    </div>
 
-                    <h3
-                        class="modal-title"
-                        id="taskModalTitle"
+    <button
+        data-page="timer"
+        type="button"
+    >
+
+        <span class="bottom-icon">
+            <i class="fa-solid fa-clock"></i>
+        </span>
+
+        <span>
+            Focus
+        </span>
+
+    </button>
+
+
+    <button
+        data-page="notes"
+        type="button"
+    >
+
+        <span class="bottom-icon">
+            <i class="fa-solid fa-note-sticky"></i>
+        </span>
+
+        <span>
+            Notes
+        </span>
+
+    </button>
+
+
+    <button
+        data-page="settings"
+        type="button"
+    >
+
+        <span class="bottom-icon">
+            <i class="fa-solid fa-gear"></i>
+        </span>
+
+        <span>
+            Settings
+        </span>
+
+    </button>
+
+
+</nav>
+
+
+<!-- =========================================================
+     MODAL — TASK
+========================================================= -->
+
+<div
+    class="modal"
+    id="taskModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="taskModalTitle"
+>
+
+
+    <div class="modal-box">
+
+
+        <div class="modal-header">
+
+            <div
+                class="modal-title"
+                id="taskModalTitle"
+            >
+                Create Task
+            </div>
+
+
+            <button
+                class="icon-btn modal-close"
+                data-close-modal="taskModal"
+                type="button"
+                aria-label="Close"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <form id="taskForm">
+
+
+            <div class="form-grid">
+
+
+                <div class="form-group full">
+
+                    <label for="taskTitle">
+                        Task name
+                    </label>
+
+                    <input
+                        id="taskTitle"
+                        name="title"
+                        type="text"
+                        placeholder="What do you need to accomplish?"
+                        maxlength="120"
+                        required
                     >
-                        Create Task
-                    </h3>
 
                 </div>
 
 
+                <div class="form-group">
+
+                    <label for="taskPriority">
+                        Priority
+                    </label>
+
+                    <select
+                        id="taskPriority"
+                        name="priority"
+                    >
+
+                        <option value="Low">
+                            Low
+                        </option>
+
+                        <option
+                            value="Medium"
+                            selected
+                        >
+                            Medium
+                        </option>
+
+                        <option value="High">
+                            High
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="taskCategory">
+                        Category
+                    </label>
+
+                    <select
+                        id="taskCategory"
+                        name="category"
+                    >
+
+                        <option value="Study">
+                            Study
+                        </option>
+
+                        <option value="Personal">
+                            Personal
+                        </option>
+
+                        <option value="Work">
+                            Work
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="modal-actions">
+
+
                 <button
-                    class="modal-close"
+                    class="btn btn-secondary"
                     data-close-modal="taskModal"
                     type="button"
-                    aria-label="Close"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    class="btn btn-primary"
+                    type="submit"
                 >
 
-                    <i class="fa-solid fa-xmark"></i>
+                    <i class="fa-solid fa-plus"></i>
+
+                    Create Task
 
                 </button>
+
 
             </div>
 
 
-            <form id="taskForm">
+        </form>
 
-
-                <div class="form-grid">
-
-
-                    <div class="form-group full">
-
-                        <label for="taskTitle">
-                            Task title
-                        </label>
-
-                        <input
-                            type="text"
-                            id="taskTitle"
-                            name="taskTitle"
-                            placeholder="What needs to be done?"
-                            maxlength="100"
-                            required
-                        >
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="taskPriority">
-                            Priority
-                        </label>
-
-                        <select
-                            id="taskPriority"
-                            name="taskPriority"
-                        >
-
-                            <option value="low">
-                                Low
-                            </option>
-
-                            <option
-                                value="medium"
-                                selected
-                            >
-                                Medium
-                            </option>
-
-                            <option value="high">
-                                High
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="taskCategory">
-                            Category
-                        </label>
-
-                        <select
-                            id="taskCategory"
-                            name="taskCategory"
-                        >
-
-                            <option value="study">
-                                Study
-                            </option>
-
-                            <option value="work">
-                                Work
-                            </option>
-
-                            <option value="personal">
-                                Personal
-                            </option>
-
-                            <option value="other">
-                                Other
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <div class="form-group full">
-
-                        <label for="taskDescription">
-                            Description
-                        </label>
-
-                        <textarea
-                            id="taskDescription"
-                            name="taskDescription"
-                            placeholder="Add more details..."
-                            maxlength="500"
-                        ></textarea>
-
-                    </div>
-
-
-                </div>
-
-
-                <div class="modal-actions">
-
-                    <button
-                        class="btn btn-secondary"
-                        data-close-modal="taskModal"
-                        type="button"
-                    >
-                        Cancel
-                    </button>
-
-
-                    <button
-                        class="btn btn-primary"
-                        type="submit"
-                    >
-
-                        <i class="fa-solid fa-check"></i>
-
-                        Create Task
-
-                    </button>
-
-                </div>
-
-
-            </form>
-
-        </div>
 
     </div>
 
 
-    <!-- =====================================================
-         NOTE MODAL
-    ====================================================== -->
+</div>
 
-    <div
-        class="modal"
-        id="noteModal"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="noteModalTitle"
-    >
 
-        <div class="modal-box">
+<!-- =========================================================
+     MODAL — NOTE
+========================================================= -->
 
-            <div class="modal-header">
+<div
+    class="modal"
+    id="noteModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="noteModalTitle"
+>
 
-                <div>
 
-                    <div class="card-kicker">
-                        KNOWLEDGE
-                    </div>
+    <div class="modal-box">
 
-                    <h3
-                        class="modal-title"
-                        id="noteModalTitle"
+
+        <div class="modal-header">
+
+            <div
+                class="modal-title"
+                id="noteModalTitle"
+            >
+                Create Note
+            </div>
+
+
+            <button
+                class="icon-btn modal-close"
+                data-close-modal="noteModal"
+                type="button"
+                aria-label="Close"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <form id="noteForm">
+
+
+            <div class="form-grid">
+
+
+                <div class="form-group full">
+
+                    <label for="noteTitle">
+                        Title
+                    </label>
+
+                    <input
+                        id="noteTitle"
+                        name="title"
+                        type="text"
+                        placeholder="Give your note a title..."
+                        maxlength="100"
+                        required
                     >
-                        Create Note
-                    </h3>
 
                 </div>
 
 
+                <div class="form-group full">
+
+                    <label for="noteBody">
+                        Note
+                    </label>
+
+                    <textarea
+                        id="noteBody"
+                        name="body"
+                        placeholder="Write your thoughts..."
+                        maxlength="5000"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="modal-actions">
+
+
                 <button
-                    class="modal-close"
+                    class="btn btn-secondary"
                     data-close-modal="noteModal"
                     type="button"
-                    aria-label="Close"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    class="btn btn-primary"
+                    type="submit"
                 >
 
-                    <i class="fa-solid fa-xmark"></i>
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    Save Note
 
                 </button>
+
 
             </div>
 
 
-            <form id="noteForm">
+        </form>
 
-
-                <div class="form-grid">
-
-
-                    <div class="form-group full">
-
-                        <label for="noteTitle">
-                            Note title
-                        </label>
-
-                        <input
-                            type="text"
-                            id="noteTitle"
-                            name="noteTitle"
-                            placeholder="Give your note a title..."
-                            maxlength="100"
-                            required
-                        >
-
-                    </div>
-
-
-                    <div class="form-group full">
-
-                        <label for="noteBody">
-                            Content
-                        </label>
-
-                        <textarea
-                            id="noteBody"
-                            name="noteBody"
-                            placeholder="Write your thoughts..."
-                            maxlength="3000"
-                            required
-                        ></textarea>
-
-                    </div>
-
-
-                </div>
-
-
-                <div class="modal-actions">
-
-                    <button
-                        class="btn btn-secondary"
-                        data-close-modal="noteModal"
-                        type="button"
-                    >
-                        Cancel
-                    </button>
-
-
-                    <button
-                        class="btn btn-primary"
-                        type="submit"
-                    >
-
-                        <i class="fa-solid fa-floppy-disk"></i>
-
-                        Save Note
-
-                    </button>
-
-                </div>
-
-
-            </form>
-
-        </div>
 
     </div>
 
 
-    <!-- =====================================================
-         SEARCH MODAL
-    ====================================================== -->
-
-    <div
-        class="modal"
-        id="searchModal"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="searchModalTitle"
-    >
-
-        <div class="modal-box search-modal-box">
-
-            <div class="modal-header">
-
-                <div>
-
-                    <div class="card-kicker">
-                        NEXORA SEARCH
-                    </div>
-
-                    <h3
-                        class="modal-title"
-                        id="searchModalTitle"
-                    >
-                        Search Workspace
-                    </h3>
-
-                </div>
+</div>
 
 
-                <button
-                    class="modal-close"
-                    data-close-modal="searchModal"
-                    type="button"
-                    aria-label="Close"
-                >
+<!-- =========================================================
+     SEARCH MODAL
+========================================================= -->
 
-                    <i class="fa-solid fa-xmark"></i>
+<div
+    class="modal"
+    id="searchModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="searchModalTitle"
+>
 
-                </button>
 
+    <div class="modal-box">
+
+
+        <div class="modal-header">
+
+            <div
+                class="modal-title"
+                id="searchModalTitle"
+            >
+                Search NEXORA
             </div>
 
 
-            <div class="global-search">
+            <button
+                class="icon-btn modal-close"
+                data-close-modal="searchModal"
+                type="button"
+                aria-label="Close"
+            >
 
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <div class="global-search">
+
+            <div class="search">
 
                 <input
                     type="search"
@@ -2312,150 +2237,31 @@
 
 
             <div
-                class="search-results"
-                id="searchResults"
+                class="global-search-results"
+                id="globalSearchResults"
             >
 
-                <div class="search-placeholder">
+                <div class="empty">
 
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <div class="empty-icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
 
-                    <p>
-                        Start typing to search your workspace.
-                    </p>
+                    <div class="empty-title">
+                        Search your workspace
+                    </div>
+
+                    <div class="empty-text">
+                        Type something above to begin.
+                    </div>
 
                 </div>
 
             </div>
 
-        </div>
-
-    </div>
-
-
-    <!-- =====================================================
-         NOTIFICATION PANEL
-    ====================================================== -->
-
-    <div
-        class="notification-panel"
-        id="notificationPanel"
-    >
-
-        <div class="notification-header">
-
-            <div>
-
-                <div class="card-kicker">
-                    ACTIVITY
-                </div>
-
-                <h3>
-                    Notifications
-                </h3>
-
-            </div>
-
-
-            <button
-                id="clearNotifications"
-                type="button"
-            >
-                Clear
-            </button>
 
         </div>
 
-
-        <div
-            class="notification-list"
-            id="notificationList"
-        >
-
-            <div class="notification-empty">
-
-                <i class="fa-regular fa-bell-slash"></i>
-
-                <span>
-                    You're all caught up.
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- =====================================================
-         TOAST CONTAINER
-    ====================================================== -->
-
-    <div
-        class="toast-container"
-        id="toastContainer"
-        aria-live="polite"
-        aria-atomic="true"
-    ></div>
-
-
-    <!-- =====================================================
-         CONFIRM MODAL
-    ====================================================== -->
-
-    <div
-        class="modal"
-        id="confirmModal"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="confirmTitle"
-    >
-
-        <div class="modal-box confirm-box">
-
-            <div class="confirm-icon">
-                <i class="fa-solid fa-triangle-exclamation"></i>
-            </div>
-
-
-            <h3
-                class="modal-title"
-                id="confirmTitle"
-            >
-                Are you sure?
-            </h3>
-
-
-            <p
-                class="confirm-message"
-                id="confirmMessage"
-            >
-                This action cannot be undone.
-            </p>
-
-
-            <div class="modal-actions">
-
-                <button
-                    class="btn btn-secondary"
-                    data-close-modal="confirmModal"
-                    type="button"
-                >
-                    Cancel
-                </button>
-
-
-                <button
-                    class="btn btn-danger"
-                    id="confirmActionBtn"
-                    type="button"
-                >
-                    Confirm
-                </button>
-
-            </div>
-
-        </div>
 
     </div>
 
@@ -2464,11 +2270,91 @@
 
 
 <!-- =========================================================
-     NEXORA JAVASCRIPT
-     DO NOT MOVE OR REMOVE
+     NOTIFICATION PANEL
 ========================================================= -->
 
-<script src="script.js"></script>
+<div
+    class="notification-panel"
+    id="notificationPanel"
+    aria-hidden="true"
+>
+
+
+    <div class="notification-header">
+
+        <strong>
+            Notifications
+        </strong>
+
+        <button
+            id="closeNotificationPanel"
+            type="button"
+            aria-label="Close notifications"
+        >
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </div>
+
+
+    <div
+        class="notification-list"
+        id="notificationList"
+    >
+
+        <div class="notification-item">
+
+            <div class="notification-icon">
+                <i class="fa-solid fa-sparkles"></i>
+            </div>
+
+            <div>
+
+                <strong>
+                    Welcome to NEXORA
+                </strong>
+
+                <p>
+                    Your workspace is ready.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+<!-- =========================================================
+     TOAST CONTAINER
+========================================================= -->
+
+<div
+    class="toast-container"
+    id="toastContainer"
+    aria-live="polite"
+    aria-atomic="true"
+></div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+     IMPORTANT:
+     JavaScript is completely separated.
+========================================================= -->
+
+<script
+    src="script.js"
+    defer
+></script>
+
 
 </body>
+
 </html>
